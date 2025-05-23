@@ -1,12 +1,10 @@
 /* Global Styles and CSS Variables */
 
-/* Global Styles and CSS Variables */
-
 /* Light Theme Variables (Default) */
 :root, body.light-mode {
   --bg-color: #f8f9fa;
   --text-color: #212529;
-  --header-bg-color: rgba(255, 255, 255, 0.8); /* Reduced opacity */
+  --header-bg-color: rgba(255, 255, 255, 0.8);
   --header-text-color: #333;
   --header-border-color: rgba(224, 224, 224, 0.8);
   --header-shadow-color: rgba(0,0,0,0.05);
@@ -35,12 +33,12 @@
   --button-hover-bg-color: #055aab;
   --button-active-shadow-color: rgba(0,0,0,0.1);
   --button-focus-shadow-color: rgba(7, 121, 228, 0.5);
-  --card-bg-color: #ffffff; /* White card background for light mode */
+  --card-bg-color: #ffffff;
   --card-border-color: #e9ecef;
   --card-shadow-color: rgba(0,0,0,0.08);
   --card-hover-shadow-color: rgba(0,0,0,0.12);
   --card-accent-border-color: #0779e4;
-  --footer-bg-color: #f8f9fa; /* Light background for footer in light mode */
+  --footer-bg-color: #f8f9fa;
   --footer-text-color: #adb5bd;
   --modal-content-bg: #ffffff;
   --modal-overlay-bg: rgba(0,0,0,0.5);
@@ -50,17 +48,17 @@
   --delete-btn-bg: #dc3545;
   --delete-btn-text-color: #ffffff;
   --delete-btn-hover-bg: #c82333;
-  --accent-color: #FF7F50; /* Soft Coral */
+  --accent-color: #FF7F50;
   --accent-color-darker: #E57373;
-  --gallery-underline-color: #343a40; /* Dark underline for light mode */
+  --gallery-underline-color: #343a40;
 }
 
 /* Dark Theme Variables */
 body.dark-mode {
-  --gallery-underline-color: #ffffff; /* White underline for dark mode */
+  --gallery-underline-color: #ffffff;
   --bg-color: #000000; 
   --text-color: #e0e0e0; 
-  --header-bg-color: rgba(28, 28, 28, 0.8); /* Reduced opacity */
+  --header-bg-color: rgba(28, 28, 28, 0.8);
   --header-text-color: #e0e0e0;
   --header-border-color: rgba(45, 45, 45, 0.8);
   --header-shadow-color: rgba(255,255,255,0.04); 
@@ -87,12 +85,12 @@ body.dark-mode {
   --button-bg-color: #5cacee;
   --button-text-color: #121212; 
   --button-hover-bg-color: #82c5f4;
-  --card-bg-color: #000000; /* Darkest black background for cards in dark mode */
+  --card-bg-color: #000000;
   --card-border-color: #3a3a3a;
   --card-shadow-color: rgba(255,255,255,0.04);
   --card-hover-shadow-color: rgba(255,255,255,0.07);
   --card-accent-border-color: #5cacee;
-  --footer-bg-color: #000000; /* Darkest black background for footer in dark mode */
+  --footer-bg-color: #000000;
   --footer-text-color: #909090; 
   --modal-content-bg: #252525;
   --modal-overlay-bg: rgba(0,0,0,0.8);
@@ -102,20 +100,19 @@ body.dark-mode {
   --delete-btn-bg: #d32f2f;
   --delete-btn-text-color: #ffffff;
   --delete-btn-hover-bg: #c62828;
-  --accent-color: #FFA07A; /* Lighter Coral for dark mode */
+  --accent-color: #FFA07A;
   --accent-color-darker: #FF7F50; 
 }
 
-/* Basic body reset and global font (Vite might provide some of this already) */
 body {
   margin: 0;
-  font-family: 'Inter', 'Lato', 'Helvetica Neue', Arial, sans-serif; /* Use Inter for body */
+  font-family: 'Inter', 'Lato', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-weight: 500; /* Make body font slightly bold */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
   line-height: 1.7;
 }
 
@@ -125,38 +122,35 @@ body {
   flex-direction: column;
 }
 
-/* --- Imported Global Styles from Original Site --- */
-
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', 'Roboto', 'Montserrat', 'Lato', 'Helvetica Neue', Arial, sans-serif; /* Use Poppins for headings */
-    color: var(--heading-color); 
-    margin-top: 0;
-    font-weight: 600; 
-    line-height: 1.3; 
+  font-family: 'Poppins', 'Roboto', 'Montserrat', 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--heading-color); 
+  margin-top: 0;
+  font-weight: 600; 
+  line-height: 1.3; 
 }
 
 h1 { font-size: 2.8rem; margin-bottom: 1.5rem; }
 h2 { font-size: 2.2rem; margin-bottom: 1.25rem; }
-h3 { font-size: 1.8rem; margin-bottom: 1rem; } /* Existing components use inline h2/h3, this will apply if they use actual h tags */
+h3 { font-size: 1.8rem; margin-bottom: 1rem; }
 
 p {
-    margin-bottom: 1rem;
-    color: var(--paragraph-color); 
+  margin-bottom: 1rem;
+  color: var(--paragraph-color); 
 }
 
 a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-}
-a:hover {
-    color: var(--link-hover-color);
-    /* text-decoration: none; */ /* Usually good to keep no decoration on hover too */
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
-/* Base Form Input Styles */
-/* Apply these to specific input elements or classes rather than globally to all inputs if more control is needed */
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Form Elements */
 input[type="text"],
 input[type="email"], 
 input[type="password"], 
@@ -165,17 +159,17 @@ input[type="time"],
 input[type="file"],
 input[type="search"],
 textarea,
-select { /* Added select for consistency */
-    width: 100%;
-    padding: 0.75rem 1rem; 
-    border: 1px solid var(--input-border-color); 
-    border-radius: 20px; /* This was from original form styles, can be adjusted */
-    box-sizing: border-box;
-    font-size: 1rem;
-    font-family: inherit; /* Inherit font from body */
-    background-color: var(--input-bg-color);
-    color: var(--input-text-color);
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--input-border-color);
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: var(--input-bg-color);
+  color: var(--input-text-color);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 input[type="text"]:focus,
@@ -187,161 +181,131 @@ input[type="file"]:focus,
 input[type="search"]:focus,
 textarea:focus,
 select:focus {
-    border-color: var(--input-focus-border-color); 
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem var(--input-focus-shadow-color); 
+  border-color: var(--input-focus-border-color);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem var(--input-focus-shadow-color);
 }
 
 textarea {
-    resize: vertical;
-    min-height: 100px; /* Adjusted from 120px */
+  resize: vertical;
+  min-height: 100px;
 }
 
-/* Base Button Styles */
-/* It's often better to create a base button class .btn and apply it, 
-   rather than styling all button elements globally, to avoid conflicts with library buttons.
-   For now, applying to element for simplicity based on original CSS. */
 button,
 input[type="button"],
 input[type="submit"] {
-    display: inline-block;
-    background-color: var(--button-bg-color); 
-    color: var(--button-text-color);
-    padding: 0.75rem 1.5rem; /* Adjusted slightly from 1.75rem */
-    border: none;
-    border-radius: 25px; 
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    text-align: center;
-    vertical-align: middle;
-    transition: background-color 0.2s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.2s ease-in-out;
-    text-decoration: none; 
-    line-height: normal; /* Ensure consistent line height */
+  display: inline-block;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+  transition: background-color 0.2s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-decoration: none;
+  line-height: normal;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover {
-    background-color: var(--button-hover-bg-color); 
-    transform: translateY(-2px); 
-    box-shadow: 0 4px 10px var(--button-active-shadow-color); 
+  background-color: var(--button-hover-bg-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px var(--button-active-shadow-color);
 }
 
 button:focus,
 input[type="button"]:focus,
 input[type="submit"]:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem var(--button-focus-shadow-color), 0 4px 10px var(--button-active-shadow-color); 
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem var(--button-focus-shadow-color), 0 4px 10px var(--button-active-shadow-color);
 }
 
 button:active,
 input[type="button"]:active,
 input[type="submit"]:active {
-    transform: translateY(0px); 
-    box-shadow: 0 2px 5px var(--button-active-shadow-color);
+  transform: translateY(0px);
+  box-shadow: 0 2px 5px var(--button-active-shadow-color);
 }
 
-/* Ensure body font size is set if not already */
 body {
-    font-size: 16px; /* From original body styles */
+  font-size: 16px;
 }
 
-/* Responsive container for mobile */
-@media (max-width: 600px) {
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
   body {
-    background: linear-gradient(135deg, #f7f3e9 60%, #e2cfa3 100%);
-    min-height: 100vh;
-    color: #5a4632;
+    font-size: 14px;
+  }
+
+  h1 { font-size: 2rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+  h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+
+  input[type="text"],
+  input[type="email"], 
+  input[type="password"], 
+  input[type="date"],
+  input[type="time"],
+  input[type="file"],
+  input[type="search"],
+  textarea,
+  select {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    border-radius: 15px;
+  }
+
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
     font-size: 13px;
   }
-  input, textarea, select, button {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.5rem;
-    border-radius: 7px;
-  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+
   .mainContainer, .indexPageContainer, .blogsPageContainer, .eventsPageContainer, .galleryPageContainer, .aboutPageContainer, .familyTreePageContainer {
-    background: #fffbe9;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px 0 rgba(120, 90, 30, 0.10), 0 1.5px 6px 0 rgba(120, 90, 30, 0.08);
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+
+  input[type="text"],
+  input[type="email"], 
+  input[type="password"], 
+  input[type="date"],
+  input[type="time"],
+  input[type="file"],
+  input[type="search"],
+  textarea,
+  select {
+    padding: 0.4rem 0.6rem;
     font-size: 0.85rem;
-    padding: 1.1rem 0.7rem 1.5rem 0.7rem;
-    margin: 0.7rem 0.2rem;
-  }
-  h1, h2, h3, h4 {
-    font-size: 1.15rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    color: #7c5a1a;
-    letter-spacing: 0.5px;
-  }
-  p, li, label, input, textarea, button {
-    font-size: 1rem;
-    word-break: break-word;
-  }
-  .sectionTitle, .sectionSubtitle {
-    font-size: 1.15rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    color: #7c5a1a;
-    letter-spacing: 0.5px;
-  }
-  .card, .eventItem, .blogPostPreview, .galleryItem, .commentItem {
-    background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 12px 0 rgba(120, 90, 30, 0.13);
+  }
+
+  button,
+  input[type="button"],
+  input[type="submit"] {
+    padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
-    padding: 0.7rem 0.5rem 1rem 0.5rem;
+    border-radius: 15px;
+    width: 100%;
     margin: 0.5rem 0;
-  }
-  .header, .footer {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.5rem 0.2rem;
-  }
-  .footer {
-    font-size: 0.95rem;
-    padding: 1.2rem 0.5rem;
-    border-radius: 10px;
-    background: #f7f3e9;
-    margin-top: 1.5rem;
-    box-shadow: 0 2px 8px #e2cfa3;
-  }
-  .nav, .navbar, .sidebar {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    gap: 0.5rem;
-  }
-  .userAvatar {
-    width: 32px;
-    height: 32px;
-    margin-right: 8px;
-  }
-  .deleteButton, .submitButton, .addEventButton, .logoutButton {
-    padding: 5px 10px;
-    font-size: 1rem;
-    border-radius: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    min-height: 44px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    box-shadow: 0 2px 8px #e2cfa3;
-  }
-  .formGroup, .formRow {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .galleryGrid, .eventsList, .blogsList {
-    grid-template-columns: 1fr !important;
-    gap: 0.7rem;
-  }
-  input, textarea, select {
-    min-height: 40px;
-    font-size: 1rem;
-    border-radius: 10px;
-    margin-bottom: 0.5rem;
   }
 }
 
@@ -349,6 +313,6 @@ body {
 .mainContainer, .indexPageContainer, .blogsPageContainer, .eventsPageContainer, .galleryPageContainer, .aboutPageContainer, .familyTreePageContainer, .commentItem, .eventItem, .blogPostPreview {
   word-break: break-word;
   overflow-wrap: anywhere;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
-
-/* You can add other global styles or resets here if needed */
