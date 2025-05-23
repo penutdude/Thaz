@@ -221,13 +221,7 @@
   }
 
   .bookSpine {
-    width: 100%; /* Full width for horizontal spine */
-    height: auto;
-    padding-top: 1rem;
-    padding-bottom: 0; /* Remove bottom padding if not needed here */
-    flex-direction: row; /* Align bookmarks horizontally */
-    overflow-x: auto; /* Allow scrolling for bookmarks if they overflow */
-    justify-content: center; /* Center bookmarks if they don't overflow */
+    display: none;
   }
 
   .spineLogo {
@@ -303,11 +297,6 @@
     margin-bottom: 1rem; /* Ensure consistent margin */
   }
   
-  .bookSpine {
-    padding-top: 0.5rem; /* Adjust padding */
-    padding-bottom: 0.5rem; /* Add some padding at the bottom */
-  }
-
   .bookmarksNav {
     justify-content: flex-start; /* Align to start if overflowing */
   }

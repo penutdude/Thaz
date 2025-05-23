@@ -224,3 +224,9 @@
   color: #ffe082;
   box-shadow: 2px 4px 12px #a0522d66;
 }
+
+@media (max-width: 768px) {
+  .bookSpine {
+    display: none;
+  }
+}
