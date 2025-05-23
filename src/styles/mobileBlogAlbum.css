@@ -1,0 +1,166 @@
+/* Custom styles for Mobile Blog Album to match screenshot */
+
+body {
+    background-color: #FAF3E0 !important; /* Force this background color */
+}
+
+.font-dancing-script {
+    font-family: 'Dancing Script', cursive;
+}
+
+.book-cover {
+    background-color: #FDFBF6;
+    border-radius: 24px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.btn-primary {
+    background-color: #D4A373 !important;
+    color: white !important;
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #BF8B5F !important;
+}
+
+.btn-secondary {
+    background-color: #E9EDC9 !important;
+    color: #7F5539 !important; /* Adjusted color to match screenshot */
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #CCD5AE !important;
+    transition: background-color 0.3s ease;
+}
+.btn-secondary:hover {
+    background-color: #D4DDBA !important;
+}
+
+.search-input {
+    border: 1px solid #E0E0E0 !important;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    background-color: #FFF !important; /* Ensure light background */
+    color: #333 !important; /* Ensure dark text */
+}
+.search-input:focus {
+    outline: none;
+    border-color: #D4A373 !important;
+    box-shadow: 0 0 0 2px rgba(212, 163, 115, 0.2) !important;
+}
+
+.blog-card {
+    background-color: #FFFDF7;
+    border-radius: 16px;
+    padding: 1rem;
+    border: 1px solid #F0EBE0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.title-bar {
+    background-color: #E9EDC9;
+    color: #5A3E2B;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.text-caption {
+    color: #757575;
+    font-size: 0.875rem;
+}
+
+.read-more-link {
+    color: #A0522D;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.read-more-link:hover {
+    text-decoration: underline;
+}
+
+.nav-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #7F5539;
+    font-size: 0.75rem;
+    text-decoration: none;
+}
+.nav-icon .material-icons {
+    font-size: 28px;
+    margin-bottom: 0.125rem;
+}
+.nav-icon.active {
+    color: #D4A373;
+}
+
+/* Specific adjustments for the Family Tree card within blog posts */
+.blog-card .family-tree-preview {
+    background-color: #FDFBF6; /* Matches book-cover background */
+    color: #7F5539; /* Adjust text color */
+    border: 1px solid #F0EBE0; /* Add border to match blog-card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Add shadow to match blog-card */
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.75rem; /* Space below this block */
+}
+.blog-card .family-tree-preview h3 {
+    color: #7F5539; /* Adjust heading color */
+}
+.blog-card .family-tree-preview p {
+    color: #757575; /* Adjust paragraph color */
+}
+.blog-card .family-tree-preview a {
+    color: #A0522D; /* Adjust link color to match read-more-link */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Header Adjustments (from previous plan, adapted for global use if needed) */
+header {
+    position: relative; /* Add this to make absolute positioning of children relative to header */
+}
+header h1 {
+    flex-grow: 1; /* Allow the title to take available space */
+    text-align: center; /* Center the title */
+}
+header button, header > div {
+    position: absolute; /* Position menu button and F icon absolutely */
+    top: 50%;
+    transform: translateY(-50%);
+}
+header button {
+    left: 1rem; /* Adjust left position for menu button */
+}
+header > div {
+    right: 1rem; /* Adjust right position for F icon */
+    width: 32px; /* Adjust size of F icon */
+    height: 32px;
+    font-size: 1.25rem; /* Adjust font size of F icon */
+}
+
+/* Search Input Icon Positioning (from previous plan) */
+.search-input + .material-icons { /* Selects the material-icons span directly after search-input */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem; /* Adjust left position of search icon */
+}
+
+/* Navigation Bar (from previous plan) */
+.nav-icon {
+    font-size: 0.875rem; /* Adjust text font size */
+}
+.nav-icon .material-icons {
+    font-size: 24px; /* Adjust icon size */
+    margin-bottom: 0.25rem; /* Adjust margin */
+}
+.nav-icon.active {
+    color: #A0522D; /* Adjust active color to match screenshot */
+}

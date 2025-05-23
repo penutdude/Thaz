@@ -1,0 +1,56 @@
+/* Styles for AddMemberForm - container styling is handled by FamilyTreePage.module.css (.formContainer) */
+/* This file will style elements within the form if needed, beyond global styles */
+
+.addMemberForm {
+  /* No specific container styles here as it's wrapped by .formContainer in FamilyTreePage.module.css */
+}
+
+.addMemberForm h3 {
+  color: var(--heading-color);
+  margin-top: 0; /* Remove default margin if any from parent container's padding */
+  margin-bottom: var(--spacing-md, 1.5rem);
+  font-size: var(--font-size-h3, 1.5rem);
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-md, 1rem);
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: var(--spacing-xs, 0.5rem);
+  color: var(--text-color);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+/* Inputs and Buttons will primarily use global styles from index.css */
+/* Add specific overrides here if necessary */
+/* e.g., .formInput, .submitButton */
+
+.buttonContainer {
+  display: flex;
+  gap: var(--spacing-sm, 0.75rem);
+  margin-top: var(--spacing-md, 1.5rem);
+}
+
+/* Styles for the Add Member Form buttons */
+.addMemberSubmitButton,
+.addMemberCancelButton {
+  color: white; /* White text */
+  font-weight: bold; /* Bold text */
+  background: linear-gradient(to top left, #006400, #008000, #e0ffe0); /* Green gradient background */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  /* Ensure padding and font-size are consistent with .btn if not already */
+}
+
+/* Glow hover animation */
+.addMemberSubmitButton:hover,
+.addMemberCancelButton:hover {
+  box-shadow: 0 0 10px #008000, 0 0 20px #008000, 0 0 30px #008000; /* Green glow effect */
+}
+
+.errorMessage {
+  color: var(--error-text-color, #dc3545);
+  margin-top: var(--spacing-sm, 0.75rem);
+  font-size: var(--font-size-sm, 0.9rem);
+}

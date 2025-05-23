@@ -1,0 +1,226 @@
+/* Styles for the individual gallery item container */
+.galleryItem {
+  background: #fffbe9;
+  border: 2.5px solid #e2cfa3;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px #a67c5233, 0 1.5px 4px #bfa76a44;
+  padding: 1.2rem 1.2rem 1.7rem 1.2rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: visible;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  transform: rotate(-2deg);
+  transition: box-shadow 0.2s, transform 0.22s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.galleryItem:nth-child(even) {
+  transform: rotate(2.5deg);
+}
+
+/* Add hover effect to the gallery item */
+.galleryItem:hover {
+  box-shadow: 0 16px 48px #a67c5266, 0 4px 16px #bfa76a55;
+  transform: scale(1.035) rotate(0deg);
+  z-index: 3;
+}
+
+/* Tape/corner decoration */
+.galleryItem::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 18px;
+  background: repeating-linear-gradient(135deg, #e2cfa3 0 8px, #bfa76a 8px 16px);
+  border-radius: 6px 6px 12px 12px;
+  opacity: 0.7;
+  z-index: 2;
+  box-shadow: 0 2px 6px #bfa76a33;
+}
+
+/* Define fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles for the image container within the gallery item */
+.imageContainer {
+  width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 auto 0.7rem auto;
+  background: #f7f3e9;
+  box-shadow: 0 2px 12px #bfa76a22;
+  border: 1.5px solid #e2cfa3;
+  position: relative;
+}
+
+/* Styles for the image within the gallery item */
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 1.5px 8px #bfa76a22;
+  background: #f7f3e9;
+}
+
+/* Styles for the photo description */
+.description {
+  color: #7c5a1a;
+  font-size: 1.08rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.2rem;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  text-align: center;
+  text-shadow: 0 1px 0 #f7f3e9;
+}
+
+/* Styles for the uploader name */
+.uploader {
+  font-size: var(--font-size-sm, 0.9em); /* Increased font size */
+  color: var(--text-secondary-color, var(--text-color)); /* Use specific or fallback variable */
+  display: block;
+  margin-bottom: var(--spacing-sm, 10px); /* Increased spacing below uploader */
+  font-weight: var(--font-weight-normal, 400); /* Changed from bold to normal for less emphasis */
+  padding: 0 var(--spacing-xs, 5px); /* Add some horizontal padding */
+}
+
+/* Styles for the delete button */
+.deleteButton {
+  margin-top: auto; 
+  align-self: flex-end; /* Align to the right within the card padding */
+  margin-right: var(--spacing-xxs, 5px); /* Small margin from the edge */
+  margin-bottom: var(--spacing-xxs, 5px); /* Small margin from the bottom edge */
+  width: auto; /* Allow width to adjust to content */
+  height: auto; /* Allow height to adjust to content */
+  padding: var(--spacing-xxs, 5px) var(--spacing-xs, 8px); /* Add padding for rectangular shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--delete-btn-bg, #dc3545);
+  color: var(--delete-btn-text-color, white);
+  border: none;
+  border-radius: var(--border-radius-sm, 4px); /* Rounded corners for rectangle */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+  font-size: var(--font-size-xs, 0.7rem); /* Use variable */
+}
+
+.deleteButton:active {
+    transform: scale(0.95);
+}
+
+.deleteButton:hover {
+  background-color: var(--delete-btn-hover-bg, #c82333);
+}
+
+/* Styles for the modal overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeInModal 0.2s;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalContent {
+  position: relative;
+  background: #f7f3e9;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 #a67c5233, 0 2px 8px 0 #bfa76a33;
+  padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+  max-width: 92vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: popInModal 0.22s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 3.5px solid #e2cfa3;
+}
+
+@keyframes popInModal {
+  0% { opacity: 0; transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.modalImage {
+  max-width: 70vw;
+  max-height: 60vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #a67c5233, 0 1.5px 8px #bfa76a22;
+  background: #fffbe9;
+  border: 6px solid #fffbe9;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.modalImage::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 22px;
+  background: repeating-linear-gradient(135deg, #e2cfa3 0 8px, #bfa76a 8px 16px);
+  border-radius: 6px 6px 12px 12px;
+  opacity: 0.7;
+  z-index: 2;
+  box-shadow: 0 2px 6px #bfa76a33;
+  pointer-events: none;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.9rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #1e90ff;
+  cursor: pointer;
+  z-index: 1;
+  transition: color 0.2s;
+}
+.closeButton:hover {
+  color: #ff6347;
+}
+
+.modalDescription {
+  color: #7c5a1a;
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  text-shadow: 0 1px 0 #f7f3e9;
+}

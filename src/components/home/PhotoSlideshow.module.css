@@ -1,0 +1,83 @@
+.slideshowContainer {
+  position: relative;
+  width: 100%; /* Take full width of parent (.gallerySection) */
+  /* max-width: 500px; /* Example max-width, adjust as needed or remove for full section width */
+  margin: auto; /* Center if max-width is set and parent is block */
+  overflow: hidden;
+  border-radius: 8px; /* Optional: rounded corners for the slideshow itself */
+  aspect-ratio: 16 / 9; /* Default aspect ratio, can be adjusted or made more dynamic */
+  background-color: #f0f0f0; /* Light background for placeholder/loading */
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the area, might crop; use 'contain' to show full image */
+  display: block;
+  border-radius: 8px; /* Match container if it's rounded */
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.navButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prevButton {
+  left: 10px;
+}
+
+.nextButton {
+  right: 10px;
+}
+
+.dotsContainer {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 10;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.activeDot {
+  background-color: white;
+}
+
+.noPhotosText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px; /* Or match slideshow height */
+  color: var(--paragraph-color);
+  font-style: italic;
+}

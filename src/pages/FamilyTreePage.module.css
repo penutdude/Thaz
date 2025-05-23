@@ -1,0 +1,608 @@
+.familyTreePageContainer {
+  padding: var(--spacing-lg, 2rem); /* Add padding for separation */
+  padding-top: 80px; /* Add top padding to clear fixed navbar */
+  background: url('/heritage-parchment-bg.jpg'), linear-gradient(to bottom right, #f7f2e3 80%, #e0d3b8 100%);
+  background-blend-mode: lighten;
+  border: 8px solid #a67c52;
+  border-radius: 32px;
+  box-shadow: 0 12px 48px 0 rgba(120, 90, 30, 0.18), 0 2px 8px 0 rgba(120, 90, 30, 0.10);
+  max-width: 1200px;
+  margin: 40px auto 32px auto;
+  position: relative;
+  overflow: visible;
+  animation: bookOpen 1.2s cubic-bezier(0.77, 0, 0.175, 1) both;
+  transform-origin: left center;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Book opening animation */
+@keyframes bookOpen {
+  0% {
+    transform: scaleX(0.1) rotateY(80deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scaleX(1.05) rotateY(-10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: scaleX(0.98) rotateY(2deg);
+  }
+  100% {
+    transform: scaleX(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* Dark theme for FamilyTreePage - preserves clean scrapbook/heritage style */
+.familyTreePageContainer.dark {
+  background: url('/heritage-parchment-bg-dark.jpg'), linear-gradient(to bottom right, #232b1a 80%, #2e3d1a 100%);
+  border-color: #3a3f2a;
+  box-shadow: 0 12px 48px 0 rgba(20, 30, 20, 0.28), 0 2px 8px 0 rgba(20, 30, 20, 0.18);
+}
+
+.familyCrest {
+  position: absolute;
+  top: -56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  background: url('/family-crest.svg') no-repeat center/contain;
+  z-index: 10;
+  filter: drop-shadow(0 0 12px #a67c52);
+}
+
+.familyTreePageContainer.dark .familyCrest {
+  filter: drop-shadow(0 0 12px #61ffb3) brightness(1.2);
+}
+
+.sectionDivider {
+  width: 80%;
+  height: 32px;
+  margin: 32px auto 24px auto;
+  background: url('/divider-doodle.svg') no-repeat center/contain;
+  opacity: 0.7;
+}
+
+.familyTreePageContainer.dark .sectionDivider {
+  background: url('/divider-doodle-dark.svg') no-repeat center/contain;
+  opacity: 0.95;
+}
+
+.sticker {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  opacity: 0.7;
+  z-index: 8;
+}
+.sticker.left { left: -32px; top: 120px; background: url('/sticker-flower.svg') no-repeat center/contain; }
+.sticker.right { right: -32px; bottom: 80px; background: url('/sticker-heart.svg') no-repeat center/contain; }
+
+.familyTreeHeader {
+  font-family: 'Caveat', 'Indie Flower', 'Dancing Script', cursive, serif;
+  color: #4b2e05;
+  letter-spacing: 1.5px;
+  font-size: 2.2rem;
+  text-shadow: 0 2px 8px #fff8e1, 0 1px 0 #d2b48c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg, 1.5rem);
+}
+
+.familyTreePageContainer.dark .familyTreeHeader,
+.familyTreePageContainer.dark .pageTitle {
+  color: #e0ffe0;
+  text-shadow: 0 2px 8px #205c1e, 0 1px 0 #61ffb3;
+}
+
+.pageTitle {
+  font-family: 'Caveat', 'Indie Flower', 'Dancing Script', cursive, serif;
+  color: #4b2e05;
+  font-size: 2.1rem;
+  border-bottom: 3px dashed #a67c52;
+  padding-bottom: 7px;
+  margin-bottom: 0.5rem;
+}
+
+.introText {
+  font-family: 'Caveat', 'Indie Flower', 'Dancing Script', cursive, serif;
+  color: #7a5a2c;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  background: rgba(255,255,255,0.7);
+  border-radius: 12px;
+  padding: 0.75rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(80,60,30,0.08);
+}
+
+.familyTreePageContainer.dark .introText {
+  color: #b3ffd6;
+  background: rgba(20,40,20,0.7);
+  box-shadow: 0 1px 4px #205c1e44;
+}
+
+.controlsContainer {
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 1px 4px rgba(80,60,30,0.08);
+  margin-bottom: var(--spacing-lg, 1.5rem);
+  display: flex;
+  gap: var(--spacing-md, 1rem);
+  flex-wrap: wrap;
+}
+
+.familyTreePageContainer.dark .controlsContainer {
+  background: rgba(20,40,20,0.6);
+  box-shadow: 0 1px 4px #205c1e44;
+}
+
+.familyTreeButton {
+  font-family: 'Caveat', 'Indie Flower', 'Dancing Script', cursive, serif;
+  border: 2.5px solid #a67c52;
+  border-radius: 10px;
+  background: linear-gradient(120deg, #f7e7b7 60%, #e2c48d 100%);
+  color: #4b2e05;
+  box-shadow: 0 2px 8px rgba(80,60,30,0.10);
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.familyTreePageContainer.dark .familyTreeButton {
+  background: linear-gradient(120deg, #205c1e 60%, #61ffb3 100%);
+  border: 2.5px solid #61ffb3;
+  color: #e0ffe0;
+}
+
+.familyTreeButton:hover {
+  box-shadow: 0 0 10px #a67c52, 0 0 20px #e2c48d, 0 0 30px #f7e7b7;
+  background: linear-gradient(120deg, #e2c48d 60%, #f7e7b7 100%);
+  color: #fff;
+}
+
+.familyTreePageContainer.dark .familyTreeButton:hover {
+  box-shadow: 0 0 10px #61ffb3, 0 0 20px #205c1e, 0 0 30px #61ffb3;
+  background: linear-gradient(120deg, #61ffb3 60%, #205c1e 100%);
+  color: #205c1e;
+}
+
+.formContainer { /* General wrapper for forms if needed */
+  margin-bottom: var(--spacing-lg, 1.5rem);
+  padding: var(--spacing-md, 1.5rem);
+  background-color: var(--form-bg-color);
+  border: 1px solid var(--form-border-color);
+  border-radius: var(--border-radius-md, 8px);
+  box-shadow: var(--card-shadow-sm);
+}
+
+.canvasContainer {
+  width: 100%;
+  min-height: 600px; /* Increased min-height */
+  border: 1px solid #a67c52;
+  border-radius: 18px;
+  background: none;
+  padding: var(--spacing-sm, 1rem); /* Padding around the canvas */
+  margin-top: var(--spacing-lg, 1.5rem);
+  box-sizing: border-box;
+  position: relative; /* For any potential absolute positioned elements inside */
+}
+
+/* Book Layout and Animation */
+.bookLayout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5ecd7;
+}
+
+.bookSpine {
+  width: 60px;
+  background: linear-gradient(120deg, #a67c52 60%, #7c5c2b 100%);
+  box-shadow: 4px 0 16px rgba(80,60,30,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.spineLogo {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  background: #fff8e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #a67c52;
+  box-shadow: 0 2px 8px #e2cfa3;
+}
+
+.bookmarksNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  align-items: center;
+}
+
+.bookmarkTab {
+  writing-mode: vertical-rl;
+  background: linear-gradient(120deg, #f7d488 60%, #e2b6a0 100%);
+  color: #5a4632;
+  border-radius: 12px 12px 0 0;
+  padding: 0.7rem 0.5rem;
+  font-family: 'Quicksand', cursive, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: 1px 2px 0 #f7d488;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.bookmarkTab.active, .bookmarkTab:hover {
+  background: linear-gradient(120deg, #e2b6a0 60%, #f7d488 100%);
+  color: #a67c52;
+  box-shadow: 2px 4px 0 #e2cfa3;
+}
+
+.bookPage {
+  flex: 1;
+  margin: 2.5rem auto;
+  max-width: 900px;
+  background: url('https://www.transparenttextures.com/patterns/linen.png'), #fffbe6;
+  border-radius: 24px 32px 24px 32px;
+  box-shadow: 0 12px 48px 0 rgba(120, 90, 30, 0.13), 0 2px 8px 0 rgba(120, 90, 30, 0.10);
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  border-right: 8px solid #e2b6a0;
+  border-left: 2px solid #e2b6a0;
+  animation: bookOpen 1.2s cubic-bezier(0.77, 0, 0.175, 1) both;
+  transform-origin: left center;
+}
+
+.bookHeader {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #a67c52;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  border-bottom: 2px dashed #e2b6a0;
+  padding-bottom: 0.5rem;
+}
+
+.bookContent {
+  flex: 1;
+  position: relative;
+}
+
+.bookFooter {
+  font-family: 'Quicksand', cursive, sans-serif;
+  font-size: 1.1rem;
+  color: #bfa77a;
+  text-align: center;
+  margin-top: auto;
+  border-top: 2px dashed #e2b6a0;
+  padding-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.marginNote {
+  position: absolute;
+  right: -110px;
+  top: 120px;
+  width: 90px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.05rem;
+  color: #bfa77a;
+  transform: rotate(-8deg);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.logoutButton {
+  background: linear-gradient(90deg, #b22222 60%, #8b1a1a 100%);
+  color: #fff8e1;
+  border: 2px solid #a0522d;
+  border-radius: 0 1.2em 1.2em 0;
+  font-family: 'Merriweather', serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0.5em 1.2em;
+  margin: 0.5em 0 0.5em 0.5em;
+  box-shadow: 2px 2px 8px #a0522d44;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.logoutButton:hover, .logoutButton:focus {
+  background: linear-gradient(90deg, #a52a2a 60%, #7b1a1a 100%);
+  color: #ffe082;
+  box-shadow: 2px 4px 12px #a0522d66;
+}
+
+/* Members List Component */
+.membersList {
+  position: absolute;
+  right: -300px;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background: #fff8e1;
+  border-left: 8px solid #e2b6a0;
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem;
+  transform-origin: left;
+  animation: unfoldList 0.8s ease-out forwards;
+  box-shadow: 4px 0 24px rgba(166, 124, 82, 0.15);
+  overflow-y: auto;
+}
+
+.memberDetails {
+  position: absolute;
+  right: -300px;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  background: #fff8e1;
+  border-left: 8px solid #e2b6a0;
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem;
+  transform-origin: left;
+  box-shadow: 4px 0 24px rgba(166, 124, 82, 0.15);
+  overflow-y: auto;
+}
+
+.memberDetails.show {
+  transform: translateX(-580px);
+}
+
+.backButton {
+  background: linear-gradient(120deg, #f7d488 60%, #e2b6a0 100%);
+  color: #5a4632;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background: linear-gradient(120deg, #e2b6a0 60%, #f7d488 100%);
+  transform: translateX(-4px);
+}
+
+.memberDetailsContent {
+  padding: 1rem 0;
+}
+
+.memberDetailsHeader {
+  font-family: 'Playfair Display', serif;
+  color: #a67c52;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dashed #e2b6a0;
+}
+
+.memberDetailsInfo {
+  font-family: 'Quicksand', sans-serif;
+  color: #5a4632;
+  line-height: 1.6;
+}
+
+.memberDetailsLabel {
+  font-weight: bold;
+  color: #a67c52;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Dark theme styles for member details */
+.familyTreePageContainer.dark .memberDetails {
+  background: #0a1a0a;
+  border-left: 8px solid #205c1e;
+}
+
+.familyTreePageContainer.dark .backButton {
+  background: linear-gradient(120deg, #205c1e 60%, #61ffb3 100%);
+  color: #e0ffe0;
+}
+
+.familyTreePageContainer.dark .backButton:hover {
+  background: linear-gradient(120deg, #61ffb3 60%, #205c1e 100%);
+}
+
+.familyTreePageContainer.dark .memberDetailsHeader {
+  color: #61ffb3;
+  border-bottom-color: #205c1e;
+}
+
+.familyTreePageContainer.dark .memberDetailsLabel {
+  color: #61ffb3;
+}
+
+.familyTreePageContainer.dark .memberDetailsInfo {
+  color: #e0ffe0;
+}
+
+.membersListHeader {
+  font-family: 'Playfair Display', serif;
+  color: #a67c52;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px dashed #e2b6a0;
+}
+
+.memberItem {
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border: 1px solid #e2b6a0;
+  transition: all 0.2s ease;
+}
+
+.memberItem:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(-4px);
+  box-shadow: 2px 2px 8px rgba(166, 124, 82, 0.1);
+}
+
+.memberName {
+  font-family: 'Quicksand', sans-serif;
+  color: #5a4632;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.memberAge {
+  font-family: 'Quicksand', sans-serif;
+  color: #8b7355;
+  font-size: 0.9rem;
+}
+
+.membersListSearch {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  border: 2px solid #e2b6a0;
+  border-radius: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.membersListSearch:focus {
+  outline: none;
+  border-color: #a67c52;
+  box-shadow: 0 0 8px #a67c5244;
+}
+
+.searchContainer {
+  position: sticky;
+  top: 0;
+  background: #fff8e1;
+  padding: 1rem 0;
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  padding: 1.5rem;
+  z-index: 1;
+  border-bottom: 1px solid #e2b6a0;
+}
+
+.familyTreePageContainer.dark .membersList {
+  background: #0a1a0a;
+  border-left: 8px solid #205c1e;
+}
+
+.familyTreePageContainer.dark .membersListHeader {
+  color: #61ffb3;
+}
+
+.familyTreePageContainer.dark .searchContainer {
+  background: #0a1a0a;
+  border-bottom: 1px solid #205c1e;
+}
+
+.familyTreePageContainer.dark .membersListSearch {
+  background: rgba(32, 92, 30, 0.1);
+  border-color: #205c1e;
+  color: #e0ffe0;
+}
+
+.familyTreePageContainer.dark .membersListSearch:focus {
+  border-color: #61ffb3;
+  box-shadow: 0 0 8px #61ffb344;
+}
+
+.familyTreePageContainer.dark .memberItem {
+  background: rgba(32, 92, 30, 0.1);
+  border-color: #205c1e;
+}
+
+.familyTreePageContainer.dark .memberName {
+  color: #e0ffe0;
+}
+
+.familyTreePageContainer.dark .memberAge {
+  color: #61ffb3;
+}
+
+.familyTreePageContainer.dark .memberItem:hover {
+  background: rgba(32, 92, 30, 0.2);
+  box-shadow: 2px 2px 8px rgba(97, 255, 179, 0.1);
+}
+
+.membersListButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.membersListButton::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #e2b6a0;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.membersListButton:hover::after {
+  background: #a67c52;
+  transform: translateY(-50%) scale(1.2);
+  box-shadow: 0 0 8px #a67c5244;
+}
+
+.familyTreePageContainer.dark .membersListButton::after {
+  background: #61ffb3;
+}
+
+.familyTreePageContainer.dark .membersListButton:hover::after {
+  background: #205c1e;
+  box-shadow: 0 0 8px #61ffb344;
+}
+
+@keyframes unfoldList {
+  from {
+    transform: scaleX(0.1);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}

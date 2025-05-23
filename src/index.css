@@ -1,0 +1,354 @@
+/* Global Styles and CSS Variables */
+
+/* Global Styles and CSS Variables */
+
+/* Light Theme Variables (Default) */
+:root, body.light-mode {
+  --bg-color: #f8f9fa;
+  --text-color: #212529;
+  --header-bg-color: rgba(255, 255, 255, 0.8); /* Reduced opacity */
+  --header-text-color: #333;
+  --header-border-color: rgba(224, 224, 224, 0.8);
+  --header-shadow-color: rgba(0,0,0,0.05);
+  --logo-color: #0779e4;
+  --nav-link-color: #333;
+  --nav-link-hover-color: #0779e4;
+  --main-bg-color: #ffffff;
+  --main-shadow-color: rgba(0,0,0,0.08);
+  --section-border-color: #f1f1f1;
+  --heading-color: #343a40;
+  --paragraph-color: #495057;
+  --link-color: #0779e4;
+  --link-hover-color: #055aab;
+  --hero-bg-color: #0779e4;
+  --hero-text-color: #ffffff;
+  --hero-paragraph-color: #e9ecef;
+  --form-bg-color: #f8f9fa;
+  --form-border-color: #dee2e6;
+  --input-bg-color: #ffffff;
+  --input-text-color: #495057;
+  --input-border-color: #ced4da;
+  --input-focus-border-color: #0779e4;
+  --input-focus-shadow-color: rgba(7, 121, 228, 0.25);
+  --button-bg-color: #0779e4;
+  --button-text-color: #ffffff;
+  --button-hover-bg-color: #055aab;
+  --button-active-shadow-color: rgba(0,0,0,0.1);
+  --button-focus-shadow-color: rgba(7, 121, 228, 0.5);
+  --card-bg-color: #ffffff; /* White card background for light mode */
+  --card-border-color: #e9ecef;
+  --card-shadow-color: rgba(0,0,0,0.08);
+  --card-hover-shadow-color: rgba(0,0,0,0.12);
+  --card-accent-border-color: #0779e4;
+  --footer-bg-color: #f8f9fa; /* Light background for footer in light mode */
+  --footer-text-color: #adb5bd;
+  --modal-content-bg: #ffffff;
+  --modal-overlay-bg: rgba(0,0,0,0.5);
+  --modal-header-color: #333;
+  --modal-close-btn-color: #888;
+  --modal-close-btn-hover-color: #000;
+  --delete-btn-bg: #dc3545;
+  --delete-btn-text-color: #ffffff;
+  --delete-btn-hover-bg: #c82333;
+  --accent-color: #FF7F50; /* Soft Coral */
+  --accent-color-darker: #E57373;
+  --gallery-underline-color: #343a40; /* Dark underline for light mode */
+}
+
+/* Dark Theme Variables */
+body.dark-mode {
+  --gallery-underline-color: #ffffff; /* White underline for dark mode */
+  --bg-color: #000000; 
+  --text-color: #e0e0e0; 
+  --header-bg-color: rgba(28, 28, 28, 0.8); /* Reduced opacity */
+  --header-text-color: #e0e0e0;
+  --header-border-color: rgba(45, 45, 45, 0.8);
+  --header-shadow-color: rgba(255,255,255,0.04); 
+  --logo-color: #61dafb; 
+  --nav-link-color: #c0c0c0; 
+  --nav-link-hover-color: #61dafb;
+  --main-bg-color: #1e1e1e;
+  --main-shadow-color: rgba(255,255,255,0.05);
+  --section-border-color: #2d2d2d;
+  --heading-color: #ffffff; 
+  --paragraph-color: #b0b0b0; 
+  --link-color: #61dafb; 
+  --link-hover-color: #8bf0ff;
+  --hero-bg-color: #0f3057;
+  --hero-text-color: #ffffff;
+  --hero-paragraph-color: #d0d0d0;
+  --form-bg-color: #252525;
+  --form-border-color: #3a3a3a; 
+  --input-bg-color: #2d2d2d; 
+  --input-text-color: #e0e0e0;
+  --input-border-color: #454545;
+  --input-focus-border-color: #5cacee;
+  --input-focus-shadow-color: rgba(92, 172, 238, 0.25);
+  --button-bg-color: #5cacee;
+  --button-text-color: #121212; 
+  --button-hover-bg-color: #82c5f4;
+  --card-bg-color: #000000; /* Darkest black background for cards in dark mode */
+  --card-border-color: #3a3a3a;
+  --card-shadow-color: rgba(255,255,255,0.04);
+  --card-hover-shadow-color: rgba(255,255,255,0.07);
+  --card-accent-border-color: #5cacee;
+  --footer-bg-color: #000000; /* Darkest black background for footer in dark mode */
+  --footer-text-color: #909090; 
+  --modal-content-bg: #252525;
+  --modal-overlay-bg: rgba(0,0,0,0.8);
+  --modal-header-color: #ffffff;
+  --modal-close-btn-color: #b0b0b0;
+  --modal-close-btn-hover-color: #ffffff;
+  --delete-btn-bg: #d32f2f;
+  --delete-btn-text-color: #ffffff;
+  --delete-btn-hover-bg: #c62828;
+  --accent-color: #FFA07A; /* Lighter Coral for dark mode */
+  --accent-color-darker: #FF7F50; 
+}
+
+/* Basic body reset and global font (Vite might provide some of this already) */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Lato', 'Helvetica Neue', Arial, sans-serif; /* Use Inter for body */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-weight: 500; /* Make body font slightly bold */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+  line-height: 1.7;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Imported Global Styles from Original Site --- */
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Roboto', 'Montserrat', 'Lato', 'Helvetica Neue', Arial, sans-serif; /* Use Poppins for headings */
+    color: var(--heading-color); 
+    margin-top: 0;
+    font-weight: 600; 
+    line-height: 1.3; 
+}
+
+h1 { font-size: 2.8rem; margin-bottom: 1.5rem; }
+h2 { font-size: 2.2rem; margin-bottom: 1.25rem; }
+h3 { font-size: 1.8rem; margin-bottom: 1rem; } /* Existing components use inline h2/h3, this will apply if they use actual h tags */
+
+p {
+    margin-bottom: 1rem;
+    color: var(--paragraph-color); 
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+a:hover {
+    color: var(--link-hover-color);
+    /* text-decoration: none; */ /* Usually good to keep no decoration on hover too */
+}
+
+/* Base Form Input Styles */
+/* Apply these to specific input elements or classes rather than globally to all inputs if more control is needed */
+input[type="text"],
+input[type="email"], 
+input[type="password"], 
+input[type="date"],
+input[type="time"],
+input[type="file"],
+input[type="search"],
+textarea,
+select { /* Added select for consistency */
+    width: 100%;
+    padding: 0.75rem 1rem; 
+    border: 1px solid var(--input-border-color); 
+    border-radius: 20px; /* This was from original form styles, can be adjusted */
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: inherit; /* Inherit font from body */
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="file"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--input-focus-border-color); 
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--input-focus-shadow-color); 
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px; /* Adjusted from 120px */
+}
+
+/* Base Button Styles */
+/* It's often better to create a base button class .btn and apply it, 
+   rather than styling all button elements globally, to avoid conflicts with library buttons.
+   For now, applying to element for simplicity based on original CSS. */
+button,
+input[type="button"],
+input[type="submit"] {
+    display: inline-block;
+    background-color: var(--button-bg-color); 
+    color: var(--button-text-color);
+    padding: 0.75rem 1.5rem; /* Adjusted slightly from 1.75rem */
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    transition: background-color 0.2s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-decoration: none; 
+    line-height: normal; /* Ensure consistent line height */
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background-color: var(--button-hover-bg-color); 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px var(--button-active-shadow-color); 
+}
+
+button:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem var(--button-focus-shadow-color), 0 4px 10px var(--button-active-shadow-color); 
+}
+
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+    transform: translateY(0px); 
+    box-shadow: 0 2px 5px var(--button-active-shadow-color);
+}
+
+/* Ensure body font size is set if not already */
+body {
+    font-size: 16px; /* From original body styles */
+}
+
+/* Responsive container for mobile */
+@media (max-width: 600px) {
+  body {
+    background: linear-gradient(135deg, #f7f3e9 60%, #e2cfa3 100%);
+    min-height: 100vh;
+    color: #5a4632;
+    font-size: 13px;
+  }
+  input, textarea, select, button {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 7px;
+  }
+  .mainContainer, .indexPageContainer, .blogsPageContainer, .eventsPageContainer, .galleryPageContainer, .aboutPageContainer, .familyTreePageContainer {
+    background: #fffbe9;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 rgba(120, 90, 30, 0.10), 0 1.5px 6px 0 rgba(120, 90, 30, 0.08);
+    font-size: 0.85rem;
+    padding: 1.1rem 0.7rem 1.5rem 0.7rem;
+    margin: 0.7rem 0.2rem;
+  }
+  h1, h2, h3, h4 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #7c5a1a;
+    letter-spacing: 0.5px;
+  }
+  p, li, label, input, textarea, button {
+    font-size: 1rem;
+    word-break: break-word;
+  }
+  .sectionTitle, .sectionSubtitle {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #7c5a1a;
+    letter-spacing: 0.5px;
+  }
+  .card, .eventItem, .blogPostPreview, .galleryItem, .commentItem {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(120, 90, 30, 0.13);
+    font-size: 0.85rem;
+    padding: 0.7rem 0.5rem 1rem 0.5rem;
+    margin: 0.5rem 0;
+  }
+  .header, .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0.2rem;
+  }
+  .footer {
+    font-size: 0.95rem;
+    padding: 1.2rem 0.5rem;
+    border-radius: 10px;
+    background: #f7f3e9;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 8px #e2cfa3;
+  }
+  .nav, .navbar, .sidebar {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .userAvatar {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+  .deleteButton, .submitButton, .addEventButton, .logoutButton {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 44px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px #e2cfa3;
+  }
+  .formGroup, .formRow {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .galleryGrid, .eventsList, .blogsList {
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem;
+  }
+  input, textarea, select {
+    min-height: 40px;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Make sure all text wraps and nothing overflows horizontally */
+.mainContainer, .indexPageContainer, .blogsPageContainer, .eventsPageContainer, .galleryPageContainer, .aboutPageContainer, .familyTreePageContainer, .commentItem, .eventItem, .blogPostPreview {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* You can add other global styles or resets here if needed */

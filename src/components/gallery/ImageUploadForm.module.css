@@ -1,0 +1,83 @@
+.uploadFormContainer {
+  padding: var(--spacing-md, 1.5rem);
+  border: 1px solid var(--form-border-color, #dee2e6);
+  border-radius: 12px;
+  margin-bottom: var(--spacing-lg, 2rem);
+  background-color: var(--form-bg-color, #f8f9fa);
+  box-shadow: 0 8px 32px 0 rgba(30,144,255,0.22), 0 2px 8px 0 rgba(0,0,0,0.10);
+  /* Stronger shadow for pop effect */
+  position: relative;
+  z-index: 10;
+  animation: popIn 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.uploadFormContainer h3 {
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md, 1.5rem);
+  font-size: var(--font-size-h3, 1.5rem);
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-md, 1rem);
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: var(--spacing-xs, 0.5rem);
+  color: var(--text-color);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+/* Using global input styles from index.css, but can override here if needed */
+
+.formTextarea {
+  min-height: 80px; /* Specific to this textarea */
+}
+
+.submitButton {
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(to top left, #1e90ff, #00bfff, #87cefa);
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 140px;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  box-shadow: none;
+  display: inline-block;
+}
+
+.submitButton:hover:enabled {
+  box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 30px #1e90ff;
+}
+
+.errorMessage {
+  color: var(--error-text-color, #dc3545);
+  margin-top: var(--spacing-sm, 0.75rem);
+  font-size: var(--font-size-sm, 0.9rem);
+}
+
+.loginMessage {
+  color: var(--text-secondary-color);
+  padding: var(--spacing-md, 1.5rem);
+  text-align: center;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md, 8px);
+  margin-top: var(--spacing-lg, 2rem);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

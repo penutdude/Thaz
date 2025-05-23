@@ -1,0 +1,15 @@
+.footer {
+  text-align: center;
+  padding: 2.5rem 1.5rem; /* Match original padding */
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  margin-top: auto; /* Pushes footer to bottom if content is short, works with flex layout in Layout.tsx */
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px); /* Consistent with header if desired */
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.footer p {
+  margin: 0;
+  color: var(--footer-text-color); /* Ensure p tag inside also gets the theme color */
+}

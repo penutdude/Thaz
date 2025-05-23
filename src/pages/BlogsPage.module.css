@@ -1,0 +1,652 @@
+/* Scrapbook-Album hybrid theme for Blogs Page */
+.blogsPage {
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  padding-top: 48px;
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  background: url('https://www.transparenttextures.com/patterns/cork-board.png'), linear-gradient(135deg, #f7f3e9 80%, #e2cfa3 100%);
+  border: 8px solid #a67c52;
+  border-radius: 32px;
+  box-shadow: 0 12px 48px 0 rgba(120, 90, 30, 0.18), 0 2px 8px 0 rgba(120, 90, 30, 0.10);
+  position: relative;
+  overflow: visible;
+  font-family: 'Georgia', 'EB Garamond', 'Segoe Print', serif;
+  animation: bookOpen 1.2s cubic-bezier(0.77, 0, 0.175, 1) both;
+  transform-origin: left center;
+}
+
+.blogsPage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  opacity: 0.13;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dark theme for BlogsPage - preserves clean scrapbook style */
+.blogsPage.dark {
+  background: url('https://www.transparenttextures.com/patterns/dark-fabric.png'), linear-gradient(135deg, #1a0a0a 80%, #2e1a0a 100%);
+  border-color: #ffd700;
+  box-shadow: 0 12px 48px 0 rgba(80, 60, 30, 0.28), 0 2px 8px 0 rgba(80, 60, 30, 0.18);
+}
+.blogsPage.dark::before {
+  background: url('https://www.transparenttextures.com/patterns/grunge-wall.png'), url('https://www.transparenttextures.com/patterns/dark-fabric.png');
+  opacity: 0.18;
+}
+.blogsPage.dark .scrapbookHeader {
+  color: #ffd700;
+  text-shadow: 2px 2px 0 #2e1a0a, 0 2px 8px #ffd700;
+}
+.blogsPage.dark .scrapbookAccent {
+  background: linear-gradient(90deg, #ffd700 0%, #b87333 100%);
+  box-shadow: 0 2px 8px #ffd700;
+}
+.blogsPage.dark .articlesWithFold {
+  background: none;
+  box-shadow: none;
+}
+
+.scrapbookHeader {
+  width: 100%;
+  background: none;
+  color: #5a4632;
+  padding: 48px 0 18px 0;
+  text-align: center;
+  font-family: 'Permanent Marker', 'Quicksand', cursive, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 #f9e7c3, 0 2px 8px #e2cfa3;
+  position: relative;
+}
+
+.scrapbookTagline {
+  color: #a88b5a;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 8px;
+  letter-spacing: 1.2px;
+  font-family: 'Quicksand', cursive, sans-serif;
+}
+
+.scrapbookAccent {
+  width: 90px;
+  height: 7px;
+  background: linear-gradient(90deg, #f7d488 0%, #e2b6a0 100%);
+  border-radius: 4px;
+  margin: 18px auto 0 auto;
+  box-shadow: 0 2px 8px #e2cfa3;
+}
+
+.articlesWithFold {
+  background: none;
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 48px 32px 48px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.blogsHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.blogsHeading {
+  color: #7c5a1a;
+  border-bottom: 2.5px solid #bfa76a;
+  padding-bottom: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 180px;
+  font-size: 2.1rem;
+  font-family: 'Permanent Marker', 'EB Garamond', 'Segoe Print', serif;
+  letter-spacing: 1.2px;
+}
+
+.blogSearchInput {
+  border-radius: 2rem;
+  padding: 0.4rem 0.8rem;
+  border: 1.5px solid #b0b0b0;
+  font-size: 0.95rem;
+  width: auto;
+  min-width: 60px;
+  flex-grow: 1;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.08);
+  outline: none;
+  text-align: center;
+  font-weight: 500;
+  background: #fff;
+  color: #222;
+  transition: box-shadow 0.2s, border 0.2s;
+  margin-top: -5px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  display: block;
+}
+
+.blogSearchInput:focus {
+  border: 1.5px solid #1e90ff;
+  box-shadow: 0 0 0 2px #1e90ff33;
+}
+
+.addPostButton {
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(to top left, #a67c52, #bfa76a, #e2cfa3);
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 140px;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 0 2px 8px #a67c5233;
+  font-family: 'Segoe Print', 'EB Garamond', serif;
+}
+
+.addPostButton:hover {
+  box-shadow: 0 0 10px #bfa76a, 0 0 20px #bfa76a, 0 0 30px #bfa76a;
+}
+
+.blogPostsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2.2rem 2.5rem;
+  margin-top: 1.5rem;
+  background: #f7f3e9;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #a67c5233;
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Scrapbook card style for blog posts */
+.scrapbookCard {
+  background: #fffbe9;
+  border: 2.5px solid #e2cfa3;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px #a67c5233, 0 1.5px 4px #bfa76a44;
+  padding: 1.2rem 1.2rem 1.7rem 1.2rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: visible;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  transform: rotate(-2deg);
+  transition: box-shadow 0.2s, transform 0.22s cubic-bezier(0.23, 1, 0.32, 1);
+  font-family: 'EB Garamond', 'Segoe Print', serif;
+}
+
+.scrapbookCard:nth-child(even) {
+  transform: rotate(2.5deg);
+}
+
+.scrapbookCard:hover {
+  box-shadow: 0 16px 48px #a67c5266, 0 4px 16px #bfa76a55;
+  transform: scale(1.035) rotate(0deg);
+  z-index: 3;
+}
+
+.tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 18px;
+  background: repeating-linear-gradient(135deg, #e2cfa3 0 8px, #bfa76a 8px 16px);
+  border-radius: 6px 6px 12px 12px;
+  opacity: 0.7;
+  z-index: 2;
+  box-shadow: 0 2px 6px #bfa76a33;
+}
+
+.coverImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 2px 8px #e2cfa3;
+}
+
+.title {
+  font-family: 'Permanent Marker', 'EB Garamond', 'Segoe Print', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #7c5a1a;
+  margin: 12px 0 0 0;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.categoryTag {
+  display: inline-block;
+  background: #e2cfa3;
+  color: #7c5a1a;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 4px 14px;
+  margin: 10px 0 0 0;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe Print', serif;
+  box-shadow: 0 1px 4px #f7d488;
+}
+
+.meta {
+  color: #a88b5a;
+  font-size: 0.98rem;
+  margin: 8px 0 0 0;
+  font-family: 'EB Garamond', serif;
+}
+
+.contentPreview {
+  color: #5a4632;
+  font-size: 1.05rem;
+  margin: 14px 0 0 0;
+  font-family: 'EB Garamond', serif;
+  line-height: 1.5;
+  min-height: 48px;
+}
+
+.doodle {
+  position: absolute;
+  bottom: 10px;
+  right: 18px;
+  font-size: 1.7rem;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.sectionDivider {
+  width: 100%;
+  height: 18px;
+  background: url('https://www.transparenttextures.com/patterns/torn-paper.png') repeat-x;
+  margin: 32px 0 24px 0;
+  opacity: 0.7;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Book opening animation */
+@keyframes bookOpen {
+  0% {
+    transform: scaleX(0.1) rotateY(80deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scaleX(1.05) rotateY(-10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: scaleX(0.98) rotateY(2deg);
+  }
+  100% {
+    transform: scaleX(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* Remove magazine styles */
+.articlesWithFold::before,
+.blogsPage::after {
+  display: none !important;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 95%;
+  overflow-y: auto;
+}
+
+/* Book Spine and Bookmarks Navigation */
+.bookLayout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5ecd7;
+}
+
+.bookSpine {
+  width: 60px;
+  background: linear-gradient(120deg, #a67c52 60%, #7c5c2b 100%);
+  box-shadow: 4px 0 16px rgba(80,60,30,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.spineLogo {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  background: #fff8e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #a67c52;
+  box-shadow: 0 2px 8px #e2cfa3;
+}
+
+.bookmarksNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  align-items: center;
+}
+
+.bookmarkTab {
+  writing-mode: vertical-rl;
+  background: linear-gradient(120deg, #f7d488 60%, #e2b6a0 100%);
+  color: #5a4632;
+  border-radius: 12px 12px 0 0;
+  padding: 0.7rem 0.5rem;
+  font-family: 'Quicksand', cursive, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: 1px 2px 0 #f7d488;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.bookmarkTab.active, .bookmarkTab:hover {
+  background: linear-gradient(120deg, #e2b6a0 60%, #f7d488 100%);
+  color: #a67c52;
+  box-shadow: 2px 4px 0 #e2cfa3;
+}
+
+.logoutButton {
+  background: linear-gradient(90deg, #b22222 60%, #8b1a1a 100%);
+  color: #fff8e1;
+  border: 2px solid #a0522d;
+  border-radius: 0 1.2em 1.2em 0;
+  font-family: 'Merriweather', serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0.5em 1.2em;
+  margin: 0.5em 0 0.5em 0.5em;
+  box-shadow: 2px 2px 8px #a0522d44;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.logoutButton:hover, .logoutButton:focus {
+  background: linear-gradient(90deg, #a52a2a 60%, #7b1a1a 100%);
+  color: #ffe082;
+  box-shadow: 2px 4px 12px #a0522d66;
+}
+
+/* Login Prompt and Arrow */
+.loginPromptWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  margin: 0.5em 0 0.5em 0.5em;
+  position: relative;
+}
+.loginArrow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 2.2em;
+  margin-right: 0.2em;
+  position: relative;
+}
+.arrowShaft {
+  width: 2.2em;
+  height: 0.22em;
+  background: linear-gradient(90deg, #a0522d 60%, #b22222 100%);
+  border-radius: 0.11em;
+  box-shadow: 1px 1px 4px #a0522d55;
+  position: absolute;
+  top: 1em;
+  right: 0.5em;
+}
+.arrowHead {
+  width: 0;
+  height: 0;
+  border-top: 0.5em solid transparent;
+  border-bottom: 0.5em solid transparent;
+  border-left: 0.7em solid #b22222;
+  position: absolute;
+  top: 0.6em;
+  right: -0.1em;
+  filter: drop-shadow(1px 1px 2px #a0522d88);
+}
+.loginPromptText {
+  font-family: 'Merriweather', serif;
+  font-size: 1em;
+  color: #a0522d;
+  background: #fff8e1;
+  border-radius: 0.5em;
+  padding: 0.2em 0.7em;
+  border: 1.5px solid #a0522d55;
+  box-shadow: 1px 1px 4px #a0522d22;
+  margin-right: 0.2em;
+}
+
+/* Book Page Container */
+.bookPage {
+  flex: 1;
+  margin: 2.5rem auto;
+  max-width: 900px;
+  background: url('https://www.transparenttextures.com/patterns/linen.png'), #fffbe6;
+  border-radius: 24px 32px 24px 32px;
+  box-shadow: 0 12px 48px 0 rgba(120, 90, 30, 0.13), 0 2px 8px 0 rgba(120, 90, 30, 0.10);
+  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  border-right: 8px solid #e2b6a0;
+  border-left: 2px solid #e2b6a0;
+  animation: bookOpen 1.2s cubic-bezier(0.77, 0, 0.175, 1) both;
+  transform-origin: left center;
+}
+
+/* Decorative Header/Footer */
+.bookHeader {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #a67c52;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  border-bottom: 2px dashed #e2b6a0;
+  padding-bottom: 0.5rem;
+}
+
+.bookFooter {
+  font-family: 'Quicksand', cursive, sans-serif;
+  font-size: 1.1rem;
+  color: #bfa77a;
+  text-align: center;
+  margin-top: auto;
+  border-top: 2px dashed #e2b6a0;
+  padding-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+/* Drop Cap for first letter */
+.bookContent p:first-of-type::first-letter {
+  float: left;
+  font-size: 2.6rem;
+  line-height: 1;
+  font-family: 'Playfair Display', serif;
+  color: #e2b6a0;
+  padding-right: 0.18em;
+  font-weight: bold;
+}
+
+/* Margin Note Example */
+.marginNote {
+  position: absolute;
+  right: -110px;
+  top: 120px;
+  width: 90px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.05rem;
+  color: #bfa77a;
+  transform: rotate(-8deg);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.blogsPageContainer, .blogPostPreview {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .blogPostsList, .blogsList {
+    grid-template-columns: 1fr !important;
+    gap: 0.7rem;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    justify-items: center;
+  }
+  .scrapbookCard, .blogPostPreview {
+    width: 95vw;
+    max-width: 340px;
+    min-width: 0;
+    margin: 0.7rem auto;
+    box-sizing: border-box;
+    padding: 0.7rem 0.4rem 1.1rem 0.4rem;
+    border-radius: 10px;
+    font-size: 0.97rem;
+    transform: none;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .coverImage {
+    height: 90px;
+    border-radius: 7px;
+    margin-bottom: 0.3rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  .title {
+    font-size: 1.05rem;
+    margin: 6px 0 0 0;
+  }
+  .categoryTag {
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    margin: 4px 0 0 0;
+  }
+  .meta, .contentPreview {
+    font-size: 0.9rem;
+    margin: 4px 0 0 0;
+    min-height: 20px;
+  }
+  .tape {
+    width: 22px;
+    height: 7px;
+    top: -3px;
+  }
+  .deleteButton, .addPostButton {
+    font-size: 0.9rem;
+    padding: 7px 14px;
+    border-radius: 7px;
+    margin-top: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .blogsHeader, .scrapbookHeader, .blogsHeading {
+    font-size: 1.2rem;
+    padding: 12px 0 6px 0;
+    text-align: center;
+  }
+  .sectionTitle, .sectionSubtitle, h1, h2, h3, h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    text-align: center;
+  }
+  .blogsPageContainer, .blogsPage, .bookPage {
+    font-size: 0.95rem;
+    padding: 0.3rem 0.2rem 0.7rem 0.2rem;
+    border-radius: 7px;
+    margin: 0.3rem 0;
+  }
+  .header, .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0.2rem;
+  }
+  .nav, .navbar, .sidebar {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  p, li, label, input, textarea, button {
+    font-size: 1rem;
+    word-break: break-word;
+  }
+}

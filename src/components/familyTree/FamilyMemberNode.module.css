@@ -1,0 +1,148 @@
+/* Scrapbook/heritage style for family member nodes */
+.scrapbookNode {
+  background: #f7f2e3;
+  border: 3px solid #a67c52;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(80, 60, 30, 0.15), 0 1.5px 0 #d2b48c inset;
+  padding: 16px 12px 12px 12px;
+  min-width: 150px;
+  max-width: 220px;
+  position: relative;
+  font-family: 'Caveat', 'Indie Flower', 'Dancing Script', cursive, serif;
+  color: #4b2e05;
+  margin: 0 auto;
+  transition: box-shadow 0.2s;
+  /* Scrapbook accents */
+  overflow: visible;
+}
+
+.scrapbookNode img {
+  border: 4px solid #fff8e1;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(80, 60, 30, 0.12);
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.tape, .leaf, .pin, .doodle {
+  pointer-events: none;
+}
+
+/* Tape accents */
+.tape {
+  position: absolute;
+  width: 48px;
+  height: 18px;
+  background: repeating-linear-gradient(135deg, #b6e7a7 0 6px, #6bbf59 6px 12px); /* Green tape */
+  opacity: 0.85;
+  border-radius: 6px;
+  z-index: 2;
+  box-shadow: 0 1px 4px rgba(80,60,30,0.10);
+}
+.tape.top-left { top: -10px; left: -12px; transform: rotate(-12deg); }
+.tape.top-right { top: -10px; right: -12px; transform: rotate(8deg); }
+.tape.bottom-left { bottom: -10px; left: -12px; transform: rotate(7deg); }
+.tape.bottom-right { bottom: -10px; right: -12px; transform: rotate(-8deg); }
+
+/* Pin accent */
+.pin {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 60% 40%, #e74c3c 70%, #b03a2e 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(80,60,30,0.18);
+  z-index: 3;
+}
+.pin.top-center { top: -16px; left: 50%; transform: translateX(-50%); }
+
+/* Doodle accent */
+.doodle {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  background: url('/doodle-star.svg') no-repeat center/contain;
+  opacity: 0.5;
+  z-index: 0;
+}
+.doodle.bottom-right { bottom: -18px; right: -18px; }
+
+/* Leaf stickers */
+.leaf {
+  position: absolute;
+  width: 32px;
+  height: 24px;
+  background: url('/leaf-sticker.svg') no-repeat center/contain;
+  z-index: 2;
+  opacity: 0.85;
+}
+.leaf.top-left { top: -18px; left: 8px; transform: rotate(-18deg); }
+.leaf.bottom-right { bottom: -18px; right: 8px; transform: rotate(12deg); }
+
+.scrapbookNode .name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+  font-family: 'Caveat', 'Indie Flower', 'Dancing Script', cursive, serif;
+}
+
+.scrapbookNode .dates, .scrapbookNode .gender {
+  font-size: 0.95rem;
+  color: #7a5a2c;
+  margin-bottom: 2px;
+  font-family: 'Caveat', 'Indie Flower', 'Dancing Script', cursive, serif;
+}
+
+.scrapbookNode .desc {
+  font-size: 0.95rem;
+  color: #5a3a1c;
+  margin-bottom: 2px;
+  font-family: 'Caveat', 'Indie Flower', 'Dancing Script', cursive, serif;
+}
+
+/* Gender color coding for scrapbook nodes */
+.scrapbookNode.male {
+  border-color: #2196f3;
+  background: #e3f2fd;
+}
+.scrapbookNode.female {
+  border-color: #e91e63;
+  background: #fce4ec;
+}
+.scrapbookNode.other {
+  border-color: #9c27b0;
+  background: #ede7f6;
+}
+
+/* Dark mode styles for Family Tree scrapbook nodes */
+.familyTreePageContainer.dark .scrapbookNode {
+  background: #0a1a0a;
+  border: 3px solid #61ffb3;
+  box-shadow: 0 4px 16px #61ffb333, 0 1.5px 0 #205c1e inset;
+  color: #e0ffe0;
+}
+
+.familyTreePageContainer.dark .scrapbookNode img {
+  border: 4px solid #205c1e;
+}
+
+.familyTreePageContainer.dark .tape {
+  background: repeating-linear-gradient(135deg, #61ffb3 0 6px, #205c1e 6px 12px);
+}
+
+.familyTreePageContainer.dark .leaf {
+  filter: brightness(1.3) hue-rotate(60deg);
+}
+
+.familyTreePageContainer.dark .pin {
+  background: radial-gradient(circle at 60% 40%, #61ffb3 70%, #205c1e 100%);
+}
+
+.familyTreePageContainer.dark .doodle {
+  filter: brightness(1.2) hue-rotate(120deg);
+}

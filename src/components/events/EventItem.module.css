@@ -1,0 +1,107 @@
+/* Styles for the individual event item container */
+.eventItem {
+  background: #fffbe9;
+  border: 1.5px solid #bfa76a;
+  border-radius: 16px;
+  padding: 22px 18px 18px 18px;
+  box-shadow: 0 4px 18px #a67c5233, 0 1.5px 8px #bfa76a22;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  transform: rotate(-1.5deg);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.eventItem::before {
+  content: '';
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(circle at 60% 40%, #e74c3c 70%, #b71c1c 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #bfa76a55;
+  z-index: 2;
+}
+
+.eventItem:hover {
+  box-shadow: 0 8px 32px #a67c5266, 0 2px 8px #bfa76a44;
+  transform: rotate(1.5deg) scale(1.03);
+}
+
+/* Styles for the event title */
+.eventTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #7c5a1a;
+  font-family: 'Permanent Marker', 'Segoe Print', 'Comic Sans MS', cursive;
+  text-align: center;
+}
+
+/* Styles for event details (date, time, location) */
+.eventDetails {
+  font-size: 1rem;
+  color: #5a4327;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.eventDetails strong {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* Styles for the event description */
+.eventDescription {
+  font-size: 1.05rem;
+  color: #5a4327;
+  margin-bottom: 15px;
+  flex-grow: 1;
+  font-family: 'Segoe Print', 'Comic Sans MS', cursive;
+}
+
+/* Styles for the author and creation date */
+.eventMeta {
+  font-size: 0.92rem;
+  color: #a67c52;
+  margin-top: auto;
+  text-align: right;
+}
+
+.eventMeta strong {
+  font-weight: bold;
+}
+
+/* Styles for the delete button */
+.deleteButton {
+  margin-top: 10px; /* Space above the button */
+  align-self: flex-end; /* Align button to the right */
+  padding: var(--spacing-xxs, 0.25rem) var(--spacing-xs, 0.5rem); /* Adjust padding for a rectangle */
+  background-color: var(--delete-btn-bg, #dc3545);
+  color: var(--delete-btn-text-color, white);
+  border: none;
+  border-radius: var(--border-radius-md, 8px); /* Rounded rectangle */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 0.9rem; /* Slightly larger font for better readability */
+  /* Remove fixed width and height to allow content to define size */
+  /* display: flex, align-items, justify-content are fine if text needs centering */
+}
+
+.deleteButton:hover {
+  background-color: var(--delete-btn-hover-bg, #c82333);
+}
+
+/* Styles for the Link component wrapping event details */
+.eventLink {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
+  display: block; /* Make the link a block to be fully clickable */
+  /* Add flex properties if needed to manage inner content spacing, but usually not needed if content is already structured */
+}

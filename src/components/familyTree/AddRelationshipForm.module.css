@@ -1,0 +1,70 @@
+/* Styles for AddRelationshipForm - container styling is handled by FamilyTreePage.module.css (.formContainer) */
+
+.addRelationshipForm {
+  /* No specific container styles here as it's wrapped by .formContainer in FamilyTreePage.module.css */
+}
+
+.addRelationshipForm h3 {
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md, 1.5rem);
+  font-size: var(--font-size-h3, 1.5rem);
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-md, 1rem);
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: var(--spacing-xs, 0.5rem);
+  color: var(--text-color);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+/* Select elements will primarily use global styles from index.css */
+/* .formSelect {} */
+
+.buttonContainer {
+  display: flex;
+  gap: var(--spacing-sm, 0.75rem);
+  margin-top: var(--spacing-md, 1.5rem);
+}
+
+/* Styles for the Add Relationship Form buttons */
+.addRelationshipSubmitButton,
+.addRelationshipCancelButton {
+  color: white; /* White text */
+  font-weight: bold; /* Bold text */
+  background: linear-gradient(to top left, #006400, #008000, #e0ffe0); /* Green gradient background */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  /* Ensure padding and font-size are consistent with .btn if not already */
+}
+
+/* Glow hover animation */
+.addRelationshipSubmitButton:hover,
+.addRelationshipCancelButton:hover {
+  box-shadow: 0 0 10px #008000, 0 0 20px #008000, 0 0 30px #008000; /* Green glow effect */
+}
+
+.errorMessage,
+.loadingMessage,
+.infoMessage {
+  padding: var(--spacing-sm, 1rem);
+  margin-bottom: var(--spacing-md, 1.5rem);
+  border-radius: var(--border-radius-sm, 5px);
+  text-align: center;
+}
+
+.errorMessage {
+  color: var(--error-text-color, #dc3545);
+  background-color: var(--error-bg-color, rgba(220, 53, 69, 0.1));
+  border: 1px solid var(--error-border-color, rgba(220, 53, 69, 0.2));
+}
+
+.loadingMessage,
+.infoMessage {
+  color: var(--text-secondary-color);
+  background-color: var(--info-bg-color, #e9ecef); /* Example info background */
+  border: 1px solid var(--info-border-color, #ced4da); /* Example info border */
+}

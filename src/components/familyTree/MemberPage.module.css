@@ -1,0 +1,193 @@
+.memberPage {
+  background: url('/heritage-parchment-bg.jpg'), linear-gradient(to bottom right, #f7f2e3 80%, #e2cfa3 100%);
+  background-blend-mode: lighten;
+  border: 8px solid #a67c52;
+  border-radius: 32px;
+  box-shadow: 0 12px 48px 0 rgba(120, 90, 30, 0.18), 0 2px 8px 0 rgba(120, 90, 30, 0.10);
+  max-width: 1600px; /* Increased from 1200px for a wider look */
+  width: 95vw; /* Allow to use most of the viewport width on large screens */
+  margin: 40px auto 32px auto;
+  padding: 2.5rem;
+  position: relative;
+  font-family: 'Caveat', 'Indie Flower', 'Dancing Script', cursive, serif;
+  color: #4b2e05;
+  min-height: 70vh;
+  animation: bookOpen 1.2s cubic-bezier(0.77, 0, 0.175, 1) both;
+  transform-origin: left center;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes bookOpen {
+  0% {
+    transform: scaleX(0.1) rotateY(80deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scaleX(1.05) rotateY(-10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: scaleX(0.98) rotateY(2deg);
+  }
+  100% {
+    transform: scaleX(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.memberPage h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #a67c52;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  border-bottom: 2px dashed #e2b6a0;
+  padding-bottom: 0.5rem;
+}
+
+.memberPage p {
+  font-family: 'Quicksand', sans-serif;
+  color: #5a4632;
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+
+.memberPage input,
+.memberPage textarea {
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 2rem;
+  border: 2px solid #e2b6a0;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1rem;
+  background: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.memberPage input:focus,
+.memberPage textarea:focus {
+  outline: none;
+  border-color: #a67c52;
+  box-shadow: 0 0 8px #a67c5244;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.buttonContainer button {
+  background: linear-gradient(120deg, #f7e7b7 60%, #e2c48d 100%);
+  color: #4b2e05;
+  border: 2px solid #a67c52;
+  border-radius: 2rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(80,60,30,0.10);
+}
+
+.buttonContainer button:hover {
+  background: linear-gradient(120deg, #e2c48d 60%, #f7e7b7 100%);
+  color: #a67c52;
+  box-shadow: 2px 4px 12px #a0522d33;
+}
+
+.socialIconsContainer {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  justify-content: flex-start;
+}
+
+.socialIconLink img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px #e2cfa3;
+  background: #fffbe6;
+  border: 2px solid #e2b6a0;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.socialIconLink img:hover {
+  box-shadow: 0 4px 16px #a67c52;
+  border-color: #a67c52;
+}
+
+@media (max-width: 1800px) {
+  .memberPage {
+    max-width: 98vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .memberPage {
+    padding: 1.2rem 0.5rem;
+    border-radius: 18px;
+    margin: 1rem;
+    min-width: 0;
+    max-width: 100vw;
+    width: 100vw;
+  }
+  .memberPage h2 {
+    font-size: 1.5rem;
+    padding-bottom: 0.3rem;
+  }
+}
+
+/* Dark mode styles */
+html.dark-mode .memberPage {
+  background: url('/heritage-parchment-bg-dark.jpg'), linear-gradient(to bottom right, #232b1a 80%, #2e3d1a 100%);
+  border-color: #3a3f2a;
+  color: #e0ffe0;
+}
+
+html.dark-mode .memberPage h2 {
+  color: #e0ffe0;
+  border-bottom: 2px dashed #205c1e;
+}
+
+html.dark-mode .memberPage p {
+  color: #b3ffd6;
+}
+
+html.dark-mode .memberPage input,
+html.dark-mode .memberPage textarea {
+  background: rgba(32, 92, 30, 0.1);
+  border-color: #205c1e;
+  color: #e0ffe0;
+}
+
+html.dark-mode .memberPage input:focus,
+html.dark-mode .memberPage textarea:focus {
+  border-color: #61ffb3;
+  box-shadow: 0 0 8px #61ffb344;
+}
+
+html.dark-mode .buttonContainer button {
+  background: linear-gradient(120deg, #205c1e 60%, #61ffb3 100%);
+  color: #e0ffe0;
+  border-color: #61ffb3;
+}
+
+html.dark-mode .buttonContainer button:hover {
+  background: linear-gradient(120deg, #61ffb3 60%, #205c1e 100%);
+  color: #205c1e;
+}
+
+html.dark-mode .socialIconLink img {
+  background: #232b1a;
+  border-color: #205c1e;
+}
+
+html.dark-mode .socialIconLink img:hover {
+  box-shadow: 0 4px 16px #61ffb3;
+  border-color: #61ffb3;
+}

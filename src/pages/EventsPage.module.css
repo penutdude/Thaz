@@ -1,0 +1,329 @@
+/* Bulletin Board theme for the Events page */
+.eventsPage {
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  padding-top: 48px;
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  background: url('https://www.transparenttextures.com/patterns/cork-board.png'), linear-gradient(135deg, #e2cfa3 80%, #bfa76a 100%);
+  border: 10px solid #a67c52;
+  border-radius: 36px;
+  box-shadow: 0 12px 48px 0 rgba(120, 90, 30, 0.18), 0 2px 8px 0 rgba(120, 90, 30, 0.10);
+  position: relative;
+  overflow: visible;
+  font-family: 'Segoe Print', 'Comic Sans MS', 'Arial', cursive;
+  animation: bookOpen 1.2s cubic-bezier(0.77, 0, 0.175, 1) both;
+  transform-origin: left center;
+}
+
+.eventsPage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  opacity: 0.13;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.eventsHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.eventsHeader h2 {
+  color: #7c5a1a;
+  font-family: 'Permanent Marker', 'Segoe Print', 'Comic Sans MS', cursive;
+  font-size: 2.3rem;
+  letter-spacing: 1.2px;
+  margin: 0;
+  border-bottom: 2.5px solid #bfa76a;
+  padding-bottom: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.addEventButton {
+  color: #fffbe9;
+  font-weight: bold;
+  background: linear-gradient(to top left, #a67c52, #bfa76a, #e2cfa3);
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 140px;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 0 2px 8px #a67c5233;
+  font-family: 'Permanent Marker', 'Segoe Print', 'Comic Sans MS', cursive;
+}
+
+.addEventButton:hover {
+  box-shadow: 0 0 10px #bfa76a, 0 0 20px #bfa76a, 0 0 30px #bfa76a;
+}
+
+/* Styles for the create event form container (if CreateEventForm is rendered directly on this page) */
+.createEventFormContainer {
+  margin-top: var(--spacing-lg, 1.5rem); /* Space above the form when shown */
+  margin-bottom: var(--spacing-lg, 1.5rem); /* Space below the form */
+  padding: var(--spacing-md, 1.5rem);
+  background-color: var(--form-bg-color);
+  border: 1px solid var(--form-border-color);
+  border-radius: var(--border-radius-md, 8px);
+  box-shadow: var(--card-shadow-sm);
+}
+
+.loadingText,
+.noEventsText {
+  color: var(--text-secondary-color);
+  text-align: center;
+  padding: var(--spacing-lg, 2rem) 0;
+}
+
+.errorMessage {
+  color: var(--error-text-color, #dc3545); /* Fallback red */
+  background-color: var(--error-bg-color, rgba(220, 53, 69, 0.1)); /* Light red background */
+  border: 1px solid var(--error-border-color, rgba(220, 53, 69, 0.2));
+  padding: var(--spacing-sm, 1rem);
+  border-radius: var(--border-radius-sm, 5px);
+  margin-bottom: var(--spacing-md, 1.5rem);
+  text-align: center;
+}
+
+/* Styles for the container holding the events list/grid */
+.eventGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 2.2rem 2.5rem;
+  margin-top: 1.5rem;
+  background: none;
+  border-radius: 18px;
+  box-shadow: none;
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.eventSearchInput {
+  border-radius: 2rem;
+  padding: 0.7rem 1.2rem;
+  border: 1.5px solid #b0b0b0;
+  font-size: 1rem;
+  width: 80px;
+  max-width: 70vw;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.08);
+  outline: none;
+  text-align: center;
+  font-weight: 500;
+  background: #fff;
+  color: #222;
+  transition: box-shadow 0.2s, border 0.2s;
+  margin: 0.5rem auto 0.5rem auto;
+  display: block;
+}
+.eventSearchInput:focus {
+  border: 1.5px solid #ffa500;
+  box-shadow: 0 0 0 2px #ffa50033;
+}
+
+/* Dark theme for EventsPage - preserves clean notice board style */
+.eventsPage.dark {
+  background: url('https://www.transparenttextures.com/patterns/dark-fabric.png'), linear-gradient(135deg, #232b1a 80%, #2e3d1a 100%);
+  border-color: #3a3f2a;
+  box-shadow: 0 12px 48px 0 rgba(20, 30, 20, 0.28), 0 2px 8px 0 rgba(20, 30, 20, 0.18);
+}
+.eventsPage.dark::before {
+  background: url('https://www.transparenttextures.com/patterns/green-fibers.png');
+  opacity: 0.18;
+}
+.eventsPage.dark .eventsHeader h2 {
+  color: #e0ffe0;
+  border-bottom: 2.5px solid #7fff7f;
+  text-shadow: 0 2px 8px #1a3d1a;
+}
+.eventsPage.dark .addEventButton {
+  background: linear-gradient(to top left, #2e3d1a, #3a3f2a, #7fff7f);
+  color: #fff;
+}
+.eventsPage.dark .addEventButton:hover {
+  box-shadow: 0 0 10px #7fff7f, 0 0 20px #7fff7f, 0 0 30px #7fff7f;
+}
+.eventsPage.dark .eventGrid {
+  background: #232b1a;
+  box-shadow: 0 4px 24px #232b1acc;
+}
+
+/* Book opening animation */
+@keyframes bookOpen {
+  0% {
+    transform: scaleX(0.1) rotateY(80deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scaleX(1.05) rotateY(-10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: scaleX(0.98) rotateY(2deg);
+  }
+  100% {
+    transform: scaleX(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* Book Layout and Animation */
+.bookLayout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5ecd7;
+}
+
+.bookSpine {
+  width: 60px;
+  background: linear-gradient(120deg, #a67c52 60%, #7c5c2b 100%);
+  box-shadow: 4px 0 16px rgba(80,60,30,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.spineLogo {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  background: #fff8e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #a67c52;
+  box-shadow: 0 2px 8px #e2cfa3;
+}
+
+.bookmarksNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+  align-items: center;
+}
+
+.bookmarkTab {
+  writing-mode: vertical-rl;
+  background: linear-gradient(120deg, #f7d488 60%, #e2b6a0 100%);
+  color: #5a4632;
+  border-radius: 12px 12px 0 0;
+  padding: 0.7rem 0.5rem;
+  font-family: 'Quicksand', cursive, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: 1px 2px 0 #f7d488;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.bookmarkTab.active, .bookmarkTab:hover {
+  background: linear-gradient(120deg, #e2b6a0 60%, #f7d488 100%);
+  color: #a67c52;
+  box-shadow: 2px 4px 0 #e2cfa3;
+}
+
+.logoutButton {
+  background: linear-gradient(90deg, #b22222 60%, #8b1a1a 100%);
+  color: #fff8e1;
+  border: 2px solid #a0522d;
+  border-radius: 0 1.2em 1.2em 0;
+  font-family: 'Merriweather', serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0.5em 1.2em;
+  margin: 0.5em 0 0.5em 0.5em;
+  box-shadow: 2px 2px 8px #a0522d44;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.logoutButton:hover, .logoutButton:focus {
+  background: linear-gradient(90deg, #a52a2a 60%, #7b1a1a 100%);
+  color: #ffe082;
+  box-shadow: 2px 4px 12px #a0522d66;
+}
+
+.bookPage {
+  flex: 1;
+  margin: 2.5rem auto;
+  max-width: 900px;
+  background: url('https://www.transparenttextures.com/patterns/linen.png'), #fffbe6;
+  border-radius: 24px 32px 24px 32px;
+  box-shadow: 0 12px 48px 0 rgba(120, 90, 30, 0.13), 0 2px 8px 0 rgba(120, 90, 30, 0.10);
+  padding: 2.5rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  border-right: 8px solid #e2b6a0;
+  border-left: 2px solid #e2b6a0;
+  animation: bookOpen 1.2s cubic-bezier(0.77, 0, 0.175, 1) both;
+  transform-origin: left center;
+}
+
+.bookHeader {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #a67c52;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  border-bottom: 2px dashed #e2b6a0;
+  padding-bottom: 0.5rem;
+}
+
+.bookContent {
+  flex: 1;
+  position: relative;
+}
+
+.bookFooter {
+  font-family: 'Quicksand', cursive, sans-serif;
+  font-size: 1.1rem;
+  color: #bfa77a;
+  text-align: center;
+  margin-top: auto;
+  border-top: 2px dashed #e2b6a0;
+  padding-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.marginNote {
+  position: absolute;
+  right: -110px;
+  top: 120px;
+  width: 90px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.05rem;
+  color: #bfa77a;
+  transform: rotate(-8deg);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.eventsPageContainer, .eventItem, .commentItem {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,99 @@
+.familyCalendar {
+  margin-top: 20px;
+}
+
+.calendarTitle {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333; /* Example color */
+}
+
+.reactCalendar {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Make calendar responsive */
+  max-width: 400px; /* Max width for larger screens */
+  margin: 0 auto; /* Center the calendar */
+}
+
+/* Style for the container holding markers on a tile */
+.tileContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px; /* Space between date number and markers */
+}
+
+/* Base style for a marker */
+.tileMarker {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin: 0 1px; /* Space between markers */
+}
+
+/* Style for birthday markers */
+.birthdayMarker {
+  background-color: #ff69b4; /* Pink color for birthdays */
+}
+
+/* Style for event markers */
+.eventMarker {
+  background-color: #1e90ff; /* Blue color for events */
+}
+
+.noItemsText {
+  text-align: center;
+  color: #666;
+  margin-top: 20px;
+}
+
+.selectedDayDetails {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: linear-gradient(120deg, rgba(255, 215, 0, 0.18) 60%, rgba(255, 245, 224, 0.18) 100%); /* Add linear gradient background */
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.selectedDayDetails h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.selectedDayDetails ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.selectedDayDetails li {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Override react-calendar styles for neighboring month days */
+.reactCalendar .react-calendar__month-view__days__day--neighboringMonth {
+  color: #000; /* Set color to black for visibility in light mode */
+}
+
+/* Ensure main month days are visible in light mode */
+body .reactCalendar .react-calendar__tile:not(:disabled):not(.react-calendar__month-view__days__day--neighboringMonth) {
+  color: #000; /* Set color to black for visibility in light mode */
+}
+
+/* Target date number directly for visibility */
+.reactCalendar .react-calendar__tile abbr {
+  color: #000 !important; /* Set color to black for visibility in light mode */
+}
+
+/* Style for current month days */
+.currentMonthDay {
+  color: #000; /* Set color to black for visibility in light mode */
+}

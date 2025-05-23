@@ -1,0 +1,671 @@
+.homePage {
+  position: relative;
+  overflow: hidden; /* Hide overflowing blobs */
+  min-height: 100vh; /* Ensure full height */
+  padding: 20px; /* Use CSS variable for background */
+  color: var(--text-color); /* Use CSS variable for text color */
+}
+
+.welcomeMessage {
+  position: fixed; /* Changed to fixed for centering on the home screen */
+  top: 40%; /* Adjusted to place the message even higher */
+  left: 50%; /* Center horizontally on the screen */
+  transform: translate(-50%, -50%); /* Adjust for centering */
+  width: auto; /* Adjust width to fit content */
+  height: auto; /* Adjust height to fit content */
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 56px; /* Make the message bigger */
+  font-weight: bold;
+  font-family: 'Noto Sans Malayalam', 'Montserrat Alternates', cursive; /* Updated font for Malayalam script */
+  white-space: nowrap; /* Ensure the message is on one line */
+  z-index: 0;
+  transition: opacity 1.5s cubic-bezier(0.4,0,0.2,1);
+  color: linear-gradient(to right, #1e90ff, #ffa500, #8a2be2, #008000); /* Match nav bar Thazhuthedath Family color */
+  background: linear-gradient(to right, #1e90ff, #ffa500, #8a2be2, #008000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.welcomeMessage h1 {
+  font-family: 'Noto Sans Malayalam', 'Montserrat Alternates', cursive !important; /* Updated font for Malayalam script */
+  font-size: 4rem; /* Increased font size for better visibility */
+  font-weight: bold;
+  color: linear-gradient(to right, #1e90ff, #ffa500, #8a2be2, #008000)!important;
+  white-space: nowrap; /* Ensure the message is on one line */
+  background: linear-gradient(to right, #1e90ff, #ffa500, #8a2be2, #008000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.welcomeMessage:not([style*="display: none"]) {
+  display: flex;
+}
+
+.welcomeMessage[style*="opacity: 0"] {
+}
+
+.sectionsContainer {
+  /* Drastically increased margin to move the container further down */
+  margin: 50vh 20px 20px 20px; /* New starting position */
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 50px; /* Make the container more rounded */
+  font-family: 'Poppins', sans-serif; /* Explicitly set font to Poppins for the container title */
+  z-index: 2;
+}
+
+.homePage.dark .sectionsContainer {
+  background-color: rgba(0, 0, 0, 0.3); /* Darker semi-transparent background in dark theme */
+}
+
+@media (max-width: 768px) {
+  .welcomeMessage {
+    top: 8vh; /* Adjust for smaller screens */
+  }
+  .sectionsContainer {
+    margin: 45vh 20px 20px 20px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .welcomeMessage {
+    top: 6vh; /* Adjust for even smaller screens */
+  }
+  .sectionsContainer {
+    margin: 40vh 20px 20px 20px; /* Adjust for even smaller screens */
+  }
+}
+
+.backgroundBlobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1; /* Bring blobs to the front for testing */
+}
+
+.blob {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(135, 206, 235, 0.5); /* SkyBlue with transparency */
+  border-radius: 50%;
+  filter: blur(80px); /* Apply blur */
+}
+
+.blob2 {
+  top: 20%;
+  left: 80%;
+  width: 250px;
+  height: 250px;
+  background-color: rgba(147, 112, 219, 0.5); /* MediumPurple with transparency */
+}
+
+.blob3 {
+  top: 70%;
+  left: 10%;
+  width: 180px;
+  height: 180px;
+  background-color: rgba(255, 165, 0, 0.5); /* Orange with transparency */
+}
+
+.blob4 {
+  top: 40%;
+  left: 60%;
+  width: 220px;
+  height: 220px;
+  background-color: rgba(60, 179, 113, 0.5); /* MediumSeaGreen with transparency */
+}
+
+.blob5 {
+  top: 10%;
+  left: 30%;
+  width: 280px;
+  height: 280px;
+  background-color: rgba(255, 99, 71, 0.5); /* Tomato with transparency */
+}
+
+.blob6 {
+  top: 80%;
+  left: 40%;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(75, 0, 130, 0.5); /* Indigo with transparency */
+}
+
+.gallerySlideshowWrapper {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 24px auto;
+  box-shadow: 0 8px 32px rgba(30, 144, 255, 0.12), 0 1.5px 6px rgba(0,0,0,0.08);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e0f7fa 0%, #f0f8ff 100%);
+  padding: 12px 0 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 36px;
+  z-index: 2;
+  position: relative;
+  margin-top: 90px; /* Push cards further down to clear the floating nav bar */
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--primary-color); /* Use CSS variable for title color */
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Reverted font back to Poppins for the container title */
+}
+
+.sectionSubtitle {
+  text-align: center;
+  color: #555;
+  font-size: 1.15em;
+  margin-bottom: 18px;
+  font-family: 'Lora', serif;
+  letter-spacing: 0.5px;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  font-size: 1.1em;
+  color: #888;
+}
+
+.gallerySection,
+.eventsSection,
+.blogsSection,
+.familyTreeSection {
+  background-color: transparent; /* Make section backgrounds transparent */
+  padding: 30px;
+  border-radius: 2.2rem; /* More rounded cards */
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+  margin-bottom: 32px;
+  margin-top: 0;
+  transition: transform 0.4s ease-in-out, box-shadow 0.2s ease-in-out, background 0.4s ease-in-out; /* Make hover animation a little faster */
+  min-width: 320px;
+  max-width: 370px;
+  padding: 22px;
+}
+
+.gallerySection:hover,
+.eventsSection:hover,
+.blogsSection:hover,
+.familyTreeSection:hover {
+  transform: translateY(-10px) scale(1.025) rotate(-1deg);
+  box-shadow: 0 12px 32px 0 rgba(30, 144, 255, 0.13), 0 2px 8px rgba(0,0,0,0.10);
+  background-blend-mode: lighten;
+  filter: brightness(1.04) saturate(1.08);
+}
+
+.gallerySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(120deg, rgba(30, 144, 255, 0.18) 60%, rgba(224, 247, 250, 0.18) 100%);
+  box-shadow: 0 4px 16px rgba(30, 144, 255, 0.08);
+  backdrop-filter: blur(2px);
+}
+
+.gallerySection .sectionTitle {
+  font-size: 2.2em;
+  color: #1e90ff;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif; /* Ensure all section titles use Poppins */
+  letter-spacing: 1px;
+}
+
+.familyTreeSection {
+  background: linear-gradient(120deg, rgba(0, 128, 0, 0.18) 60%, rgba(224, 255, 224, 0.18) 100%);
+  box-shadow: 0 4px 16px rgba(0, 128, 0, 0.08);
+  backdrop-filter: blur(2px);
+}
+
+.familyTreeSection .sectionTitle {
+  font-size: 2.2em;
+  color: #008000;
+  font-family: 'Poppins', sans-serif; /* Ensure all section titles use Poppins */
+  margin-bottom: 12px;
+}
+
+.eventsSection {
+  background: linear-gradient(120deg, rgba(255, 215, 0, 0.18) 60%, rgba(255, 245, 224, 0.18) 100%);
+  box-shadow: 0 4px 16px rgba(255, 165, 0, 0.08);
+  backdrop-filter: blur(2px);
+}
+
+.eventsSection .sectionTitle {
+  font-size: 2.2em;
+  color: #ffa500;
+  font-family: 'Poppins', sans-serif; /* Ensure all section titles use Poppins */
+  margin-bottom: 12px;
+}
+
+.blogsSection {
+  background: linear-gradient(120deg, rgba(138, 43, 226, 0.18) 60%, rgba(243, 230, 255, 0.18) 100%);
+  box-shadow: 0 4px 16px rgba(138, 43, 226, 0.08);
+  backdrop-filter: blur(2px);
+  position: relative;
+  overflow: visible;
+  min-width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.blogsSection .sectionTitle {
+  font-size: 2.2em;
+  color: #8a2be2;
+  font-family: 'Poppins', sans-serif; /* Ensure all section titles use Poppins */
+  margin-bottom: 12px;
+}
+
+.viewAllButton {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.viewAllButton:hover {
+  opacity: 0.9;
+}
+
+/* Gallery Section Specific Styles */
+.gallerySection .sectionTitle {
+  color: #1e90ff; /* DodgerBlue */
+}
+
+/* Events Section Specific Styles */
+.eventsSection .sectionTitle {
+  color: #ffa500; /* Orange */
+}
+
+.eventsPreview {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eventPreviewItem {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color); /* Use CSS variable for border */
+}
+
+.eventPreviewItem:last-child {
+  border-bottom: none;
+}
+
+/* Blogs Section Specific Styles */
+.blogsSection .sectionTitle {
+  color: #8a2be2; /* BlueViolet */
+}
+
+.blogsPreview {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blogPreviewItem {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color); /* Use CSS variable for border */
+}
+
+.blogPreviewItem:last-child {
+  border-bottom: none;
+}
+
+.addBlogPrompt {
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-color); /* Use CSS variable for text color */
+}
+
+.addBlogButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: var(--button-background-color); /* Use CSS variable for button background */
+  color: var(--button-text-color); /* Use CSS variable for button text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.addBlogButton:hover {
+  background-color: var(--button-hover-background-color); /* Use CSS variable for button hover background */
+}
+
+.createPostFormContainer {
+  width: 100%;
+  max-width: 420px;
+  min-width: 260px;
+  margin: 0 0 24px 0;
+  align-self: flex-start;
+  background: #fffbe6;
+  border: 2.5px dashed #e2b6a0;
+  border-radius: 18px 32px 18px 32px;
+  box-shadow: 2px 6px 18px rgba(90,70,50,0.10), 0 2px 0 #f7d488;
+  padding: 32px 32px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  .createPostFormContainer {
+    max-width: 98vw;
+    padding: 16px 4vw 16px 4vw;
+  }
+}
+
+/* Family Tree Section Specific Styles */
+.familyTreeSection .sectionTitle {
+  color: #008000; /* Green */
+}
+
+.familyMemberSearchInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color); /* Use CSS variable for border */
+  border-radius: 5px;
+  background-color: var(--input-background-color); /* Use CSS variable for input background */
+  color: var(--input-text-color); /* Use CSS variable for input text */
+}
+
+.familyMemberList {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.familyMemberItem {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e0ffe0;
+  background: linear-gradient(120deg, rgba(0, 128, 0, 0.18) 60%, rgba(224, 255, 224, 0.18) 100%); /* Add linear gradient background */
+  border-radius: 8px;
+  margin-bottom: 6px;
+  transition: box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s;
+  box-shadow: 0 1px 6px 0 rgba(0,128,0,0.08);
+  will-change: transform, box-shadow;
+}
+
+.familyMemberItem:hover, .familyMemberItem:focus {
+  background: rgba(220,255,220,0.60);
+  color: #006400;
+  z-index: 2;
+  box-shadow: 0 1px 6px 0 rgba(0,128,0,0.08);
+  animation: none;
+}
+
+@keyframes memberGlow {
+  0% {
+    box-shadow: 0 0 16px 4px rgba(0,128,0,0.16), 0 0 32px 8px rgba(0,255,128,0.10);
+  }
+  100% {
+    box-shadow: 0 0 28px 10px rgba(0,128,0,0.22), 0 0 48px 16px rgba(0,255,128,0.16);
+  }
+}
+
+.familyMemberItem:active {
+  transform: scale(0.98) perspective(600px) rotateX(0deg) translateY(0px);
+  box-shadow: 0 2px 6px 0 rgba(0,128,0,0.10);
+}
+
+.familyMemberItem:last-child {
+  border-bottom: none;
+}
+
+.scrollableList {
+  max-height: 500px; /* Adjust as needed */
+  overflow-y: auto;
+}
+
+.calendarWrapper {
+  margin: 18px 0 10px 0;
+  background: linear-gradient(120deg, rgba(255, 215, 0, 0.18) 60%, rgba(255, 245, 224, 0.18) 100%);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(255, 165, 0, 0.07);
+  padding: 10px 8px 2px 8px;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 10px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modalContent.dark {
+  background-color: black;
+  color: white;
+}
+
+/* Dark Theme Specific Styles */
+.homePage.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.homePage.dark .sectionTitle {
+  color: #bb86fc; /* Light purple for dark theme titles */
+}
+
+.homePage.dark .gallerySection,
+.homePage.dark .eventsSection,
+.homePage.dark .blogsSection,
+.homePage.dark .familyTreeSection {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.homePage.dark .eventPreviewItem,
+.homePage.dark .blogPreviewItem,
+.homePage.dark .familyMemberItem {
+  border-bottom-color: #333;
+}
+
+.homePage.dark .addBlogPrompt {
+  color: #b0b0b0;
+}
+
+.homePage.dark .addBlogButton {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+.homePage.dark .addBlogButton:hover {
+  background-color: #9a67ea;
+}
+
+.homePage.dark .createPostFormContainer {
+  background-color: #2c2c2c;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.homePage.dark .familyMemberSearchInput {
+  border-color: #333;
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+}
+
+.homePage.dark .familyMemberItem:hover {
+  background-color: #333;
+}
+
+/* CSS Variables for Theme */
+:root {
+  --background-color: #f0f2f5;
+  --text-color: #333;
+  --primary-color: #007bff;
+  --card-background-color: #fff;
+  --border-color: #eee;
+  --button-background-color: #007bff;
+  --button-text-color: #fff;
+  --button-hover-background-color: #0056b3;
+  --form-background-color: #f9f9f9;
+  --input-background-color: #fff;
+  --input-text-color: #333;
+  --hover-background-color: #f0f0f0;
+}
+
+.dark {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #bb86fc;
+  --card-background-color: #1e1e1e;
+  --border-color: #333;
+  --button-background-color: #bb86fc;
+  --button-text-color: #121212;
+  --button-hover-background-color: #9a67ea;
+  --form-background-color: #2c2c2c;
+  --input-background-color: #2c2c2c;
+  --input-text-color: #e0e0e0;
+  --hover-background-color: #333;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: relative;
+  transition: none;
+  box-shadow: 0 2px 12px 0 rgba(30, 60, 90, 0.10);
+  
+}
+
+.sectionContent .viewAllButton {
+  margin-top: auto;
+  align-self: center;
+}
+
+/* Photo Details Section Styles */
+.photoDetailsSection {
+  margin: 18px auto 0 auto;
+  max-width: 600px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.08);
+  padding: 18px 28px 14px 28px;
+  backdrop-filter: blur(2px);
+  font-size: 1.08em;
+}
+
+.homePage.dark .photoDetailsSection {
+  background: rgba(30,30,30,0.7);
+  color: #e0e0e0;
+}
+
+.photoDetailsTitle {
+  font-family: 'Pacifico', cursive; /* Updated to a widely supported cursive font */
+  font-size: 1.25em;
+  color: #1e90ff;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.photoDetailsContent p {
+  margin: 0 0 6px 0;
+  color: #222;
+}
+
+.homePage.dark .photoDetailsContent p {
+  color: #e0e0e0;
+}
+
+.photoDetailsContent strong {
+  font-weight: 600;
+  color: #1e90ff;
+}
+
+.homePage.dark .photoDetailsContent strong {
+  color: #bb86fc;
+}
+
+@media (max-width: 900px) {
+  .sectionsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .gallerySlideshowWrapper {
+    max-width: 98vw;
+  }
+  .gallerySection,
+  .eventsSection,
+  .blogsSection,
+  .familyTreeSection {
+    flex: 0 0 92vw;
+    min-width: 220px;
+    max-width: 98vw;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallerySection,
+  .eventsSection,
+  .blogsSection,
+  .familyTreeSection {
+    border-radius: 1.1rem;
+    padding: 18px;
+  }
+  .sectionsGrid {
+    margin-top: 70px;
+  }
+}

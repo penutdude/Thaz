@@ -1,0 +1,61 @@
+.createEventForm {
+  /* padding: var(--spacing-md, 1.5rem); */ /* This is handled by .createEventFormContainer in EventsPage.module.css */
+  /* border: 1px solid var(--form-border-color, #dee2e6); */
+  /* border-radius: var(--border-radius-md, 8px); */
+  /* margin: var(--spacing-lg, 2rem) 0; */ /* Margin handled by parent container in EventsPage */
+  /* background-color: var(--form-bg-color, #f8f9fa); */
+}
+
+.createEventForm h3 {
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md, 1.5rem);
+  font-size: var(--font-size-h3, 1.5rem);
+}
+
+.formRow {
+  display: flex;
+  gap: var(--spacing-md, 1rem);
+  margin-bottom: var(--spacing-md, 1rem);
+}
+
+.formRow > div {
+  flex: 1;
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-md, 1rem);
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: var(--spacing-xs, 0.5rem);
+  color: var(--text-color);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+/* Inputs and Textarea will primarily use global styles from index.css */
+/* .formInput, .formTextarea {} */
+
+.getLocationButton {
+  /* Leverages global button styles but can be smaller/secondary */
+  margin-top: var(--spacing-xs, 0.5rem);
+  padding: var(--spacing-xxs, 0.4rem) var(--spacing-sm, 0.8rem);
+  font-size: var(--font-size-sm, 0.9rem);
+  background-color: var(--button-secondary-bg-color, #6c757d); /* Example secondary color */
+  color: var(--button-secondary-text-color, #ffffff);
+}
+
+.getLocationButton:hover {
+  background-color: var(--button-secondary-hover-bg-color, #5a6268);
+}
+
+.submitButton {
+  /* Uses global button styles from index.css */
+}
+
+.errorMessage {
+  color: var(--error-text-color, #dc3545);
+  margin-top: var(--spacing-sm, 0.75rem);
+  font-size: var(--font-size-sm, 0.9rem);
+}

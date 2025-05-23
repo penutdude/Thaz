@@ -1,0 +1,63 @@
+/* Styles for EditMemberForm - container styling is handled by FamilyTreePage.module.css (.formContainer) */
+
+.editMemberForm {
+  /* No specific container styles here as it's wrapped by .formContainer in FamilyTreePage.module.css */
+}
+
+.editMemberForm h3 {
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md, 1.5rem);
+  font-size: var(--font-size-h3, 1.5rem);
+}
+
+.formGroup {
+  margin-bottom: var(--spacing-md, 1rem);
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: var(--spacing-xs, 0.5rem);
+  color: var(--text-color);
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+.currentPhotoContainer {
+  margin-bottom: var(--spacing-sm, 0.75rem);
+}
+
+.currentPhoto {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: var(--spacing-xs, 0.5rem);
+  border-radius: var(--border-radius-sm, 4px);
+  border: 1px solid var(--border-color);
+}
+
+.noPhotoText {
+  font-style: italic;
+  color: var(--text-secondary-color);
+  margin-bottom: var(--spacing-xs, 0.5rem);
+}
+
+.removePhotoLabel {
+  margin-left: var(--spacing-xs, 0.5rem);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-color);
+}
+
+/* Inputs and Buttons will primarily use global styles from index.css */
+
+.buttonContainer {
+  display: flex;
+  gap: var(--spacing-sm, 0.75rem);
+  margin-top: var(--spacing-md, 1.5rem);
+}
+
+.errorMessage {
+  color: var(--error-text-color, #dc3545);
+  margin-top: var(--spacing-sm, 0.75rem);
+  font-size: var(--font-size-sm, 0.9rem);
+}
