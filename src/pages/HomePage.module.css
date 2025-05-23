@@ -33,9 +33,9 @@
 
 .welcomeMessage h1 {
   font-family: 'Noto Sans Malayalam', 'Montserrat Alternates', cursive !important; /* Updated font for Malayalam script */
-  font-size: 4rem; /* Increased font size for better visibility */
+  font-size: 4rem; /* Base font size */
   font-weight: bold;
-  color: linear-gradient(to right, #1e90ff, #ffa500, #8a2be2, #008000)!important;
+  color: linear-gradient(to right, #1e90ff, #ffa500, #8a2be2, #008000)!important; /* color important can stay if needed for gradient */
   white-space: nowrap; /* Ensure the message is on one line */
   background: linear-gradient(to right, #1e90ff, #ffa500, #8a2be2, #008000);
   -webkit-background-clip: text;
@@ -69,17 +69,39 @@
   .welcomeMessage {
     top: 8vh; /* Adjust for smaller screens */
   }
+  .welcomeMessage h1 {
+    white-space: normal;
+    font-size: 2.5rem; 
+  }
   .sectionsContainer {
     margin: 45vh 20px 20px 20px; /* Adjust for smaller screens */
+  }
+  .gallerySection .sectionTitle,
+  .eventsSection .sectionTitle,
+  .blogsSection .sectionTitle,
+  .familyTreeSection .sectionTitle {
+    font-size: 1.8em; /* Adjust for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
+  .homePage {
+    padding: 10px;
+  }
   .welcomeMessage {
     top: 6vh; /* Adjust for even smaller screens */
   }
+  .welcomeMessage h1 {
+    font-size: 1.8rem; /* Further reduce for very small screens */
+  }
   .sectionsContainer {
-    margin: 40vh 20px 20px 20px; /* Adjust for even smaller screens */
+    margin: 35vh 10px 10px 10px; /* Adjust for even smaller screens and new padding */
+  }
+  .gallerySection .sectionTitle,
+  .eventsSection .sectionTitle,
+  .blogsSection .sectionTitle,
+  .familyTreeSection .sectionTitle {
+    font-size: 1.4em; /* Further reduce for very small screens */
   }
 }
 

@@ -327,3 +327,69 @@
   word-break: break-word;
   overflow-wrap: anywhere;
 }
+
+@media (max-width: 768px) {
+  .eventsPage {
+    padding: 1.5rem 1rem;
+    margin: 1.5rem auto;
+    border-width: 8px;
+    border-radius: 24px;
+  }
+
+  .eventsHeader {
+    flex-direction: column;
+    align-items: stretch; /* Make items stretch to fill width */
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+  }
+
+  .eventsHeader h2 {
+    font-size: 2rem;
+    text-align: center; /* Center title when stacked */
+  }
+
+  .addEventButton {
+    padding: 0.8rem 1.2rem; /* Adjust padding */
+    align-self: center; /* Center button when stacked */
+  }
+
+  .eventGrid {
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .eventSearchInput {
+    max-width: 80vw; /* Allow a bit wider search input */
+    width: auto; /* Let it take the content width or max-width */
+  }
+}
+
+@media (max-width: 480px) {
+  .eventsPage {
+    padding: 1rem 0.5rem;
+    margin: 1rem auto;
+    border-width: 6px;
+    border-radius: 18px;
+  }
+
+  .eventsHeader h2 {
+    font-size: 1.6rem;
+  }
+
+  .addEventButton {
+    padding: 0.7rem 1rem; /* Further adjust padding */
+    font-size: 0.9rem; /* Adjust font size if needed */
+  }
+
+  .eventGrid {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+  
+  .eventSearchInput {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}

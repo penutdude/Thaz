@@ -214,3 +214,105 @@
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  .bookLayout {
+    flex-direction: column; /* Stack spine and page on smaller screens */
+  }
+
+  .bookSpine {
+    width: 100%; /* Full width for horizontal spine */
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 0; /* Remove bottom padding if not needed here */
+    flex-direction: row; /* Align bookmarks horizontally */
+    overflow-x: auto; /* Allow scrolling for bookmarks if they overflow */
+    justify-content: center; /* Center bookmarks if they don't overflow */
+  }
+
+  .spineLogo {
+    width: 30px;
+    height: 30px;
+    font-size: 1.4rem;
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-right: 1rem; /* Add right margin for spacing */
+  }
+  
+  .bookmarksNav {
+    flex-direction: row; /* Align bookmarks horizontally */
+    gap: 0.5rem; /* Reduce gap for horizontal layout */
+    width: auto; /* Allow it to take necessary width */
+  }
+
+  .bookmarkTab {
+    writing-mode: horizontal-tb; /* Horizontal text */
+    padding: 0.5rem 1rem; /* Adjust padding for horizontal tabs */
+    border-radius: 8px 8px 0 0; /* Adjust border-radius for horizontal tabs */
+    font-size: 0.9rem;
+  }
+
+  .bookPage {
+    padding: 1.5rem; /* Reduce padding for smaller screens */
+    margin: 1rem auto; /* Reduce margin */
+    min-height: unset; /* Allow page to shrink */
+    border-right: none; /* Remove side border as metaphor changes */
+    border-left: none; /* Remove side border */
+    border-top: 4px solid #e2b6a0; /* Add top border to simulate page edge */
+    border-radius: 12px; /* Simpler border radius */
+  }
+
+  .bookHeader {
+    font-size: 1.8rem; /* Reduce font size for smaller screens */
+  }
+
+  .photoGrid {
+    gap: 1rem; /* Reduce gap for smaller items */
+    padding: 1rem; /* Adjust padding */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Allow smaller items */
+  }
+  
+  .marginNote {
+    display: none; /* Hide margin note on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .bookPage {
+    padding: 1rem; /* Further reduce padding */
+    margin: 0.5rem auto;
+  }
+
+  .bookHeader {
+    font-size: 1.5rem; /* Further reduce font size */
+  }
+
+  .photoGrid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller items */
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .uploadButton, 
+  .gallerySearchInput {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .gallerySearchInput {
+    margin-bottom: 1rem; /* Ensure consistent margin */
+  }
+  
+  .bookSpine {
+    padding-top: 0.5rem; /* Adjust padding */
+    padding-bottom: 0.5rem; /* Add some padding at the bottom */
+  }
+
+  .bookmarksNav {
+    justify-content: flex-start; /* Align to start if overflowing */
+  }
+  
+  .spineLogo {
+    margin-left: 0.5rem; /* Add some left margin for logo */
+  }
+}
